@@ -10,6 +10,8 @@ require_once( trailingslashit( get_template_directory() ) . "/inc/customizer/cus
 require_once( trailingslashit( get_template_directory() ) . "/inc/widgets/latte-services.php" );
 require_once( trailingslashit( get_template_directory() ) . "/inc/widgets/latte-skills.php" );
 require_once( trailingslashit( get_template_directory() ) . "/inc/other/post-formats.php" );
+define("THEME_ROOT", get_template_directory());
+define("THEME_URL", get_template_directory_uri());
 
 function latte_setup() {
 	// Using this feature you can set the maximum allowed width for any content in the theme, like oEmbeds and images added to posts.  https://codex.wordpress.org/Content_Width
@@ -20,7 +22,7 @@ function latte_setup() {
 
 	// Takes care of the <title> tag. https://codex.wordpress.org/Title_Tag
 	add_theme_support('title-tag');
-	
+
 	// Loads texdomain. https://codex.wordpress.org/Function_Reference/load_theme_textdomain
 	load_theme_textdomain('latte', get_template_directory() . '/languages');
 
@@ -53,10 +55,10 @@ function latte_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'latte' ),
 	));
-	
+
 	// Adding image sizes. https://developer.wordpress.org/reference/functions/add_image_size/
 	add_image_size( 'latte-blogposts', 287, 230, true );
-	
+
 	// This theme styles the visual editor to resemble the theme style. https://codex.wordpress.org/Function_Reference/add_editor_style
 	$font_lora = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Lato:300,400,700' );
 	$font_open_sans = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' );
@@ -68,10 +70,10 @@ function latte_setup() {
 		$font_open_sans,
 		$font_sanchez
 	) );
-	
+
 	// Added WooCommerce support
 	add_theme_support( 'woocommerce' );
-	
+
 }
 
 add_action( 'after_setup_theme', 'latte_setup' );
@@ -131,10 +133,10 @@ add_action( 'widgets_init', 'latte_widgets_init' );
 
 // Registering and enqueuing scripts/stylesheets to header/footer.
 function latte_scripts() {
-	
+
 	$latte_animations_display = get_theme_mod('latte_animations_display');
 	$latte_menu_display = get_theme_mod('latte_menu_display');
-	
+
 	wp_enqueue_style( 'latte_bootstrap_css', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
 	wp_enqueue_style( 'latte_font_awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
 	wp_enqueue_style( 'latte_style', get_stylesheet_uri());
@@ -166,6 +168,13 @@ function latte_scripts() {
 		'latte_services_display' => get_theme_mod('latte_services_display'),
 		'latte_blogposts_display' => get_theme_mod('latte_blogposts_display')
 	));
+
+	$files = glob(THEME_ROOT."/dist/js-chunks/*.js");
+	foreach($files as $key=>$js_file) {
+		preg_match('/\/dist\/js-chunks\/[\w.]+/', $js_file, $matches);
+		$handler = "reactApp-".$key;
+		wp_enqueue_script( $handler, THEME_URL.$matches[0]);
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'latte_scripts' );
@@ -175,7 +184,15 @@ function latte_customizer_js() {
 	wp_enqueue_script( 'latte_customizer_js', get_template_directory_uri() . '/inc/customizer/customizer.js', array("jquery"), '20120206', true  );
 }
 
-add_action( 'customize_controls_enqueue_scripts', 'latte_customizer_js' );
+//add_action( 'customize_controls_enqueue_scripts', 'latte_customizer_js' );
+
+
+// add custom css
+wp_enqueue_style('home', get_template_directory_uri() . '/dist/styles/minified/home.min.css');
+
+// add React bundle
+
+
 
 // Default menu for new setups.
 function latte_new_setup() {
@@ -205,8 +222,8 @@ function latte_comment($comment, $args, $depth) {
 
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
-	
-	
+
+
 		case 'trackback' :
 		?>
 			<li class="post pingback">
@@ -214,7 +231,7 @@ function latte_comment($comment, $args, $depth) {
 		<?php
 		break;
 
-	
+
 		default :
 		?>
 			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
@@ -247,7 +264,7 @@ function latte_comment($comment, $args, $depth) {
 
 <?php
 		break;
-	
+
 	endswitch;
 }
 ?>

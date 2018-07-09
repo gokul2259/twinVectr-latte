@@ -2,25 +2,41 @@
   "name": "latte",
   "version": "1.0.0",
   "description": "portfolio-gokul2259",
-  "main": "app.js",
+  "main": "Gruntfile.js",
+  "config": {
+    "webpack": "webpack.config.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
     "file-loader": "^1.1.11",
     "grunt": "^1.0.3",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "node-sass": "^4.9.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
-    "webpack": "^4.14.0"
+    "webpack": "^4.14.0",
+    "webpack-command": "^0.4.1"
+  },
+  "dependencies": {
+    "glob": "^7.1.2",
+    "lodash": "^4.17.10",
+    "path": "^0.12.7",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
   }
 }

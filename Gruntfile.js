@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+  const path = require(path);
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
