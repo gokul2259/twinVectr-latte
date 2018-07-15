@@ -12,6 +12,12 @@ module.exports = {
         filename: '[name].bundle.js',
         chunkFilename: '[id].chunk.js',
     },
+    resolve: {
+      modules:[
+        JS_ROOT,
+        'node_modules'
+      ],
+    },
     module: {
       rules: [
         {
@@ -20,7 +26,7 @@ module.exports = {
           use: {
             loader: 'babel-loader',
             options: {
-             presets: ['env', 'react']
+             presets: ['env', 'react', "es2015"],
            },
          },
         },

@@ -1,6 +1,6 @@
-import {bindActionCreators} from "redux";
-import {connect} from "react-redux";
-import ListRecentWorks from "./components/ListRecentWorks.js";
+const { bindActionCreators } = require("redux");
+const { connect } = require("react-redux");
+const ListRecentWorks = require("./components/ListRecentWorks.js");
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -12,6 +12,4 @@ const mapStateToProps = (state, ownProps) => {
 //     return();
 // };
 
-const RecentWorkApp = connect(mapStateToProps)(ListRecentWorks);
-
-module.exports = RecentWorkApp;
+module.exports = connect(mapStateToProps)(ListRecentWorks);

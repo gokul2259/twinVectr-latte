@@ -169,11 +169,17 @@ function latte_scripts() {
 		'latte_blogposts_display' => get_theme_mod('latte_blogposts_display')
 	));
 
-	$files = glob(THEME_ROOT."/dist/js-chunks/*.js");
-	foreach($files as $key=>$js_file) {
+	$bundle_files = glob(THEME_ROOT."/dist/js-chunks/entries/desktop/*.js");
+	$chunk_files = glob(THEME_ROOT."/dist/js-chunks/*.js");
+	foreach($chunk_files as $key=>$js_file) {
 		preg_match('/\/dist\/js-chunks\/[\w.]+/', $js_file, $matches);
-		$handler = "reactApp-".$key;
-		wp_enqueue_script( $handler, THEME_URL.$matches[0]);
+		$handler = "reactApp-chunk-".$key;
+		wp_enqueue_script( $handler, THEME_URL.$matches[0],'', '', true);
+	}
+	foreach($bundle_files as $key=>$js_file) {
+		preg_match('/\/dist\/js-chunks\/entries\/desktop\/[\w.]+/', $js_file, $matches);
+		$handler = "reactApp-bundle".$key;
+		wp_enqueue_script( $handler, THEME_URL.$matches[0], '', '', true);
 	}
 }
 

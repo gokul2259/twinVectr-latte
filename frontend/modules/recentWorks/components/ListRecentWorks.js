@@ -4,13 +4,20 @@ class ListRecentWorks extends Component {
 
   constructor(props) {
     super(props);
-    console.log("here you go");
   }
 
-  reneder() {
+  render() {
+    const { title, subTitle } = this.props;
     return(
       <div>
-        this is the list recent works
+        <div className="container">
+				    <div className="row">
+              <header data-sr="ease-in-out wait 0.25s" className="services-header">
+                <h2>{title}</h2>
+                  <h3>{subTitle}</h3>
+              </header>
+            </div>
+          </div>
       </div>
     );
   }
