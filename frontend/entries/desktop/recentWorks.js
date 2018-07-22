@@ -1,7 +1,6 @@
 require([
   '../baseEntry/index.js',
-  '../../modules/recentWorks/index.js'
-], (baseEntry, ListRecentWorks) => {
+], (baseEntry) => {
   const { initPage } = baseEntry;
-  initPage({services1: ListRecentWorks});
+  initPage();
 });

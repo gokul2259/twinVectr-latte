@@ -1,15 +1,17 @@
 const { bindActionCreators } = require("redux");
 const { connect } = require("react-redux");
-const ListRecentWorks = require("./components/ListRecentWorks.js");
+const Services = require("./components/services.js");
+const recentWorkActions = require('./recentWorks-action');
 
-const mapStateToProps = (state, ownProps) => {
+function mapStateToProps(state, ownProps){           
     return {
-        recentWorkList : state.recentWorkList,
+        recentWorkList : state.recentWorks,
     };
 }
 
-// const mapDispatchToProps = (dispatch) => {
-//     return();
-// };
+function mapDispatchToProps(dispatch){
+    return bindActionCreators(recentWorkActions, dispatch);
+};
 
-module.exports = connect(mapStateToProps)(ListRecentWorks);
+
+module.exports = connect(mapStateToProps, mapDispatchToProps)(Services);

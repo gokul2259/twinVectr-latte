@@ -2,8 +2,9 @@ const _ = require('lodash');
 const React = require('react');
 const ReactDOM = require('react-dom');
 const { Provider } = require('react-redux');
-const { combineReducers, createStore } = require('redux');
-const { recentWorksAction } = require('modules/recentWorks/recentWorks-reducer.js');
+const { combineReducers, createStore, applyMiddleware } = require('redux');
+const thunk = require('redux-thunk').default;
+const recentWorksReducer = require('modules/recentWorks/recentWorks-reducer.js');
 
 function isReactReduxsetup() {
   return window.store;
@@ -13,14 +14,14 @@ function setupInitialStore() {
   window.store = configureStore();
 }
 
-function createReducer() {
-  const reducers = Object.assign({}, recentWorksAction);
-  return combineReducers({recentWorks: recentWorksAction});
+function createReducer(asyncReducers = {}) {
+  const reducers = Object.assign({}, {recentWorks: recentWorksReducer}, asyncReducers);
+  return combineReducers(reducers);
 }
 
 function configureStore() {
   const initialState = {};
-  const store = createStore(createReducer(), initialState);
+  const store = createStore(createReducer({}), initialState, applyMiddleware(thunk));
   return store;
 }
 
@@ -76,7 +77,6 @@ function initPage(reactElementNodeIds = {}) {
 
 function renderEverything(reactElementNodeIds) {
   const { store } = window;
-
   renderReactElementsToNodeByIds(reactElementNodeIds, store);
   lazyRenderReactElements(store);
 }
@@ -101,7 +101,7 @@ function renderReactElementToNode(ReactComponent, destinationNode, store, props 
     return null;
   }
 
-  const { WrappedComponent } = ReactComponent;
+  const WrappedComponent  = ReactComponent.default;
 
   ReactDOM.render(
     <Provider store={store}>

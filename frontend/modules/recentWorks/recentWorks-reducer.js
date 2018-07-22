@@ -1,14 +1,29 @@
+const actionTypes = require('./constants');
+
 const defaultState = {
-  recentWorks: [],
+    recentWorks: []
 };
 
-function recentWorksAction(state = defaultState, action) {
-  switch(action.type) {
-    case 1:
-    case 2:
-    default:
-    return state;
-  }
+function recentWorksReducer(state = defaultState, action) {
+  switch (action.type) {
+        case actionTypes.GET_MY_RECENT_WORKS:
+            {
+                const {recentWorkList} = action;
+                return {
+                    ...state,
+                    recentWorks: recentWorkList,
+                };
+            }
+        case actionTypes.GET_MORE_OF_MY_RECENT_WORKS:
+            {
+              return {
+                ...state,
+                text: "po da thevidia",
+              };
+            }
+        default:
+            return state;
+    }
 }
 
-module.exports = { recentWorksAction };
+module.exports = recentWorksReducer;
