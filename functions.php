@@ -10,6 +10,7 @@ require_once( trailingslashit( get_template_directory() ) . "/inc/customizer/cus
 require_once( trailingslashit( get_template_directory() ) . "/inc/widgets/latte-services.php" );
 require_once( trailingslashit( get_template_directory() ) . "/inc/widgets/latte-skills.php" );
 require_once( trailingslashit( get_template_directory() ) . "/inc/other/post-formats.php" );
+require_once( trailingslashit( get_template_directory() ) . "/wp-rest-custom-fields.php" );
 define("THEME_ROOT", get_template_directory());
 define("THEME_URL", get_template_directory_uri());
 

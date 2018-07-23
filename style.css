@@ -383,7 +383,7 @@ and (orientation: portrait)
 	background: #F5F5F5;
 }
 .services  .row {
-	padding: 50px;
+	padding: 5px;
 }
 .services .services-header {
 	text-align: center;
@@ -1113,7 +1113,7 @@ input.searchform-button:active {
 		padding: 50px 20px;
 	}
 	.services .row {
-		padding: 50px 20px;
+		padding: 20px 20px;
 	}
 	.services .service-box {
 		padding: 25px 0;

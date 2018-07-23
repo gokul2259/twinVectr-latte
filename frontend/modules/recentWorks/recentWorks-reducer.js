@@ -18,7 +18,7 @@ function recentWorksReducer(state = defaultState, action) {
             {
               return {
                 ...state,
-                text: "po da thevidia",
+                text: "",
               };
             }
         default:

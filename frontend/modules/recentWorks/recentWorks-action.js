@@ -7,7 +7,7 @@ const {
 
 function getDefaultWorks() {
     const queryParams = {
-        url: '/wp-json/wp/v2/posts/?filter[categories]=recent-works',
+        url: '/wp-json/wp/v2/posts/?filter[category_name]=recent-works',
     };
     return (dispatch) => get(queryParams).then((res) => {
         dispatch(setDefaultRecentWorks(res.data));

@@ -9,6 +9,12 @@ class Services extends Component {
         getDefaultWorks();
     }
 
+    renderRecentWorkList() {
+        const { recentWorkList: { recentWorks } } = this.props;
+        return recentWorks.map((recentWork, key)=> 
+            <ServiceItem recentWork={recentWork} key={key}/>);
+    }
+
     render() {
         const {title, subTitle} = this.props;
         return (
@@ -20,7 +26,7 @@ class Services extends Component {
                             <h3>{subTitle}</h3>
                         </header>
                     </div>
-                    <ServiceItem />
+                    {this.renderRecentWorkList()}
                 </div>
             </div>
         );
