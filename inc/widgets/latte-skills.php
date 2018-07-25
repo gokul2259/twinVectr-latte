@@ -24,6 +24,10 @@ class latte_skills_widget extends WP_Widget {
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('title') ); ?>" name="<?php echo esc_attr( $this->get_field_name('title') ); ?>" type="text" value="<?php if( !empty($instance['title']) ): echo esc_html($instance['title']); endif; ?>" />
 		</p>
 		<p>
+			<label for="<?php echo esc_attr( $this->get_field_id('skill_image') ); ?>"><?php esc_html_e('Skill icon', 'latte'); ?></label> 
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('skill_image') ); ?>" name="<?php echo esc_attr( $this->get_field_name('skill_image') ); ?>" value="<?php if( !empty($instance['skill_image']) ): echo esc_html($instance['skill_image']); endif; ?>" />
+		</p>
+		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id('percentage') ); ?>"><?php esc_html_e('Percentage', 'latte'); ?></label> 
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id('percentage') ); ?>" name="<?php echo esc_attr( $this->get_field_name('percentage') ); ?>" type="number" min="0" max="100" value="<?php if( !empty($instance['percentage']) ): echo intval($instance['percentage']); endif; ?>" />
 		</p>
@@ -31,11 +35,6 @@ class latte_skills_widget extends WP_Widget {
 			<label for="<?php echo esc_attr( $this->get_field_id('titlecolor') ); ?>"><?php esc_html_e('Title Color', 'latte'); ?></label> 
 			<br/>
 			<input id="<?php echo esc_attr( $this->get_field_id('titlecolor') ); ?>" name="<?php echo esc_attr( $this->get_field_name('titlecolor') ); ?>" type="color" data-default-color="#FFF" value="<?php if( !empty($instance['titlecolor']) ): echo esc_html($instance['titlecolor']); else: echo'#FFFFFF'; endif; ?>" />
-		</p>
-		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id('titlebackground') ); ?>"><?php esc_html_e('Title Background', 'latte'); ?></label> 
-			<br/>
-			<input id="<?php echo esc_attr( $this->get_field_id('titlebackground') ); ?>" name="<?php echo esc_attr( $this->get_field_name('titlebackground') ); ?>" type="color" data-default-color="#D35400" value="<?php if( !empty($instance['titlebackground']) ): echo esc_html($instance['titlebackground']); else: echo'#D35400'; endif; ?>" />
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id('barbackground') ); ?>"><?php esc_html_e('Bar Background', 'latte'); ?></label> 
@@ -49,6 +48,7 @@ class latte_skills_widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = esc_html($new_instance['title']);
 		$instance['percentage'] = intval($new_instance['percentage']);
+		$instance['skill_image'] = esc_html($new_instance['skill_image']);
 		$instance['titlecolor'] = esc_html($new_instance['titlecolor']);
 		$instance['titlebackground'] = esc_html($new_instance['titlebackground']);
 		$instance['barbackground'] = esc_html($new_instance['barbackground']);
@@ -61,7 +61,7 @@ class latte_skills_widget extends WP_Widget {
 			<?php echo $before_widget; ?>
 					<div data-sr="ease-in-out wait 0.25s" class="col-md-6 col-sm-12 skill-box">
 						<div class="skillbar clearfix " data-percent="<?php if( !empty($instance['percentage']) ): echo intval($instance['percentage']); endif; ?>%">
-							<div class="skillbar-title" style="background: <?php if( !empty($instance['titlebackground']) ): echo esc_html($instance['titlebackground']); endif; ?>;"><span style="color:<?php if( !empty($instance['titlecolor']) ): echo esc_html($instance['titlecolor']); endif; ?>;"><?php if( !empty($instance['title']) ): echo esc_html($instance['title']); endif; ?></span></div>
+							<div class="skillbar-title"><span style="color:<?php if( !empty($instance['titlecolor']) ): echo esc_html($instance['titlecolor']); endif; ?>;"><?php if( !empty($instance['title']) ): echo esc_html($instance['title']); endif; ?></span><span class="skill-logo"><img src=<?php if( !empty($instance['skill_image']) ): echo esc_html($instance['skill_image']); endif; ?> /></span></div>
 							<div class="skillbar-bar" style="background: <?php if( !empty($instance['barbackground']) ): echo esc_html($instance['barbackground']); endif; ?>;"></div>
 							<div class="skill-bar-percent"><?php if( !empty($instance['percentage']) ): echo esc_html($instance['percentage']); endif; ?>%</div>
 						</div>

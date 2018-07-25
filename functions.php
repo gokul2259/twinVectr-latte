@@ -195,7 +195,7 @@ function latte_customizer_js() {
 
 
 // add custom css
-wp_enqueue_style('home', get_template_directory_uri() . '/dist/styles/minified/home.min.css');
+wp_enqueue_style('baseStyle', get_template_directory_uri() . '/dist/styles/minified/base.min.css');
 
 // add React bundle
 
