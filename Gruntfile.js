@@ -2,6 +2,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-webpack');
+    var webpackConfig = require('./webpack.config');
+
+
     grunt.initConfig({
         pkg: grunt
             .file
@@ -19,6 +23,9 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        webpack: {
+            webpackConfig
+          },
         cssmin: {
             target: {
                 files: [
@@ -33,11 +40,18 @@ module.exports = function (grunt) {
             }
         },
         watch: {
-            scripts: {
+            stylesheets: {
                 files: ['assets/styles/**/*.scss'],
                 tasks: [
                     'sass', 'cssmin'
                 ],
+                options: {
+                    spawn: false
+                }
+            },
+            js: {
+                files: ['frontend/**/*.js'],
+                tasks: ['webpack'],
                 options: {
                     spawn: false
                 }
@@ -46,6 +60,5 @@ module.exports = function (grunt) {
 		});
 		
     grunt.registerTask('compass', ['sass', 'cssmin']);
-    grunt.registerTask('watch', ['watch']);
 
 };
