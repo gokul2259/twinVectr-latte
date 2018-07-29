@@ -20,13 +20,7 @@ function latte_custom_css() {
 ?>
 <style>
 <?php if ( is_page_template( 'template-home.php' ) ) : ?>
-<?php if( isset($latte_intro_display) && $latte_intro_display != 1 ): ?>
-<?php if(!empty($latte_intro_background_color)) : ?>
-.intro {
-	background: <?php echo esc_html($latte_intro_background_color); ?>;
-}
-<?php endif; ?>
-<?php endif; ?>
+
 <?php if( isset($latte_about_display) && $latte_about_display != 1 ): ?>
 <?php if(!empty($latte_about_background_color)) : ?>
 .about {
@@ -34,13 +28,7 @@ function latte_custom_css() {
 }
 <?php endif; ?>
 <?php endif; ?>
-<?php if( isset($latte_social_display) && $latte_social_display != 1 ): ?>
-<?php if(!empty($latte_social_background_color)) : ?>
-.social {
-	background: <?php echo esc_html($latte_social_background_color); ?>;
-}
-<?php endif; ?>
-<?php endif; ?>
+
 <?php if( isset($latte_services_display) && $latte_services_display != 1 ): ?>
 <?php if(!empty($latte_services_background_color)) : ?>
 .services {

@@ -6,8 +6,10 @@
         "node": true
     },
     "parserOptions": {
+        "ecmaVersion": 9,
         "ecmaFeatures": {
-            "jsx": true
+            "jsx": true,
+            "spread": true
         },
         "sourceType": "module"
     },
