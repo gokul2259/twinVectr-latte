@@ -30,7 +30,7 @@ jQuery(document).ready(function($) {
 		});
 		if( latte_script_var.latte_parallax_background != '' ) {
 			/* Parallax */
-			$('.site-wrapper').parallax({imageSrc: latte_script_var.latte_parallax_background, bleed: '10', androidFix: 'false'});
+			//$('.site-wrapper').parallax({imageSrc: latte_script_var.latte_parallax_background, bleed: '10', androidFix: 'false'});
 		}
 	}
 

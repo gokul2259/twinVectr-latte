@@ -5,21 +5,21 @@ const defaultState = {
 };
 
 function recentWorksReducer(state = defaultState, action) {
-  switch (action.type) {
+    switch (action.type) {
         case actionTypes.GET_MY_RECENT_WORKS:
             {
                 const {recentWorkList} = action;
                 return {
                     ...state,
-                    recentWorks: recentWorkList,
+                    recentWorks: recentWorkList
                 };
             }
         case actionTypes.GET_MORE_OF_MY_RECENT_WORKS:
             {
-              return {
-                ...state,
-                text: "",
-              };
+                return {
+                    ...state,
+                    text: ""
+                };
             }
         default:
             return state;

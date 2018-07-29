@@ -4,10 +4,10 @@
   "description": "portfolio-latte",
   "main": "Gruntfile.js",
   "config": {
-  "webpack": "webpack.config.js"
+    "webpack": "webpack.config.js"
   },
   "scripts": {
-  "build": "webpack"
+    "build": "webpack"
   },
   "author": "",
   "license": "ISC",
@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "eslint": "^5.2.0",
     "glob": "^7.1.2",
     "grunt-sass": "^3.0.1",
     "grunt-webpack": "^3.1.2",
@@ -43,6 +44,7 @@
     "path": "^0.12.7",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sass": "^1.10.1"
   }
-  }
+}
