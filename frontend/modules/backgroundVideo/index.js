@@ -16,6 +16,7 @@ class BGVideo extends Component {
         width = '1200'
         autoPlay
         loop
+        muted
         />;
     }
 }

@@ -13,11 +13,18 @@ class Video extends Component {
             autoPlay,
             controls,
             loop,
+            muted,
         } = this.props;
 
        
         return (
-            <video className="parallax-video" height={height} width={width} autoPlay={autoPlay} loop={loop} controls={controls}> 
+            <video className="parallax-video" 
+            height={height} 
+            width={width} 
+            autoPlay={autoPlay} 
+            loop={loop} 
+            muted={muted}
+            controls={controls}> 
                 <source src={videoMp4} type='video/mp4'/>
                 <source src='http://localhost/wp-content/uploads/2018/07/sample.webm' type='video/webm'/>
             </video>
@@ -31,6 +38,7 @@ Video.defaultProps = {
     autoPlay: false,
     controls: false,
     loop: false,
+    muted: false,
   };
 
 module.exports = Video;
