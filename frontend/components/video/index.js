@@ -15,16 +15,16 @@ class Video extends Component {
             loop,
             muted,
         } = this.props;
-
-       
+ 
         return (
-            <video className="parallax-video" 
+            <video
             height={height} 
             width={width} 
             autoPlay={autoPlay} 
             loop={loop} 
             muted={muted}
-            controls={controls}> 
+            controls={controls}
+            > 
                 <source src={videoMp4} type='video/mp4'/>
                 <source src='http://localhost/wp-content/uploads/2018/07/sample.webm' type='video/webm'/>
             </video>

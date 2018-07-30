@@ -10,14 +10,18 @@ class BGVideo extends Component {
 
     render() {
         const { videoMp4 } = this.props;
-        return <Video 
-        videoMp4 = {videoMp4}
-        height = '600'
-        width = '1200'
-        autoPlay
-        loop
-        muted
-        />;
+        return (
+            <div className="parallax-video">
+                <Video 
+                    videoMp4 = {videoMp4}
+                    height = '600'
+                    width = '1200'
+                    autoPlay
+                    loop
+                    muted
+                />
+            </div>
+        );
     }
 }
 
