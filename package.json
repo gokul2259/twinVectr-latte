@@ -7,7 +7,8 @@
     "webpack": "webpack.config.js"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack --progress",
+    "build-prod": "webpack --progress --config webpack.production.config.js"
   },
   "author": "",
   "license": "ISC",
