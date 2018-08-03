@@ -1,5 +1,4 @@
 var path = require('path');
-var UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 var entryPointfetcher = require('./build/entryPointFetcher.js');
 var ROOT = __dirname;
 var JS_ROOT = path.resolve(ROOT,'frontend');
@@ -39,8 +38,5 @@ module.exports = {
       ],
     },
     mode: 'development',
-    plugins: [
-   // Adding our UglifyJS plugin
-   new UglifyJSPlugin(),
- ],
+    plugins: [],
 }
