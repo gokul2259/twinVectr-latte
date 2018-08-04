@@ -240,6 +240,7 @@ img.alignright,
 	margin-left: auto;
 	padding: 100px 0;
 	text-align: center;
+	margin-top: 25%;
 }
 .intro .inner {
 	padding: 30px;
@@ -269,6 +270,9 @@ and (orientation: portrait)
 .intro .arrow .fa {
 	font-size: 50px;
 	color: #FFF;
+	padding-top: 31%;
+    position: relative;
+    display: block;
 }
 
 /*
