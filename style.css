@@ -1157,4 +1157,11 @@ input.searchform-button:active {
 	.blog .pager li > span {
 		width: 100%;
 	}
+	
+}
+
+@media screen and (min-width: 442px) {
+	.services-container {
+		padding-bottom: 40px;
+	}
 }

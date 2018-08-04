@@ -139,6 +139,8 @@ function latte_scripts() {
 	$latte_menu_display = get_theme_mod('latte_menu_display');
 
 	wp_enqueue_style( 'latte_bootstrap_css', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
+	wp_enqueue_style( 'latte_semantic_css', get_template_directory_uri() . '/node_modules/semantic-ui-css/semantic.min.css');
+	
 	wp_enqueue_style( 'latte_font_awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
 	wp_enqueue_style( 'latte_style', get_stylesheet_uri());
 	wp_enqueue_style( 'latte_lora', '//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic');
