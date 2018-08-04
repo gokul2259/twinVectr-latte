@@ -6,11 +6,6 @@ get_template_directory_uri().'/assets/images/avatar.jpg' ); $latte_intro_scroll
     <div class="container">
         <div class="cover-container row">
             <div class="inner cover col-md-12 col-sm-12 col-xs-12">
-                <?php if(!empty($latte_intro_avatar)) : ?>
-                <div
-                    class="avatar"
-                    style="background-image:url('<?php echo esc_url($latte_intro_avatar); ?>');"></div>
-                <?php endif; ?>
                 <h1 class="cover-heading"><?= bloginfo( 'name' )?></h1>
                 <h2 class=""><?= bloginfo( 'description' )?></h2>
                 <?php if(!empty($latte_intro_scroll)) : ?>
