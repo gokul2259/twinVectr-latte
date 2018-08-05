@@ -8,6 +8,10 @@ get_template_directory_uri().'/assets/images/avatar.jpg' ); $latte_intro_scroll
             <div class="inner cover col-md-12 col-sm-12 col-xs-12">
                 <h1 class="cover-heading"><?= bloginfo( 'name' )?></h1>
                 <h2 class=""><?= bloginfo( 'description' )?></h2>
+            </div>
+        </div>
+        <div class="row intro-arrow" >
+            <div>
                 <?php if(!empty($latte_intro_scroll)) : ?>
                 <a href="<?php echo esc_url($latte_intro_scroll); ?>" class="arrow">
                     <i class="fa fa-angle-down"></i>
