@@ -12,12 +12,12 @@ class Video extends Component {
 
   handleScrollCalcualtion(event) {
     const vScrollTop = event.target.scrollingElement.scrollTop;
-    const heroText = document.querySelector(".cover-heading");
+    const heroText = document.querySelector(".cover-container");
     heroText.style.transform = this.getScrollPosition(vScrollTop);
   }
 
   getScrollPosition(scrollTop) {
-    return `translate(0px, ${scrollTop / 2}%)`;
+    return `translate(0px, ${scrollTop / 9}%)`;
   }
 
   render() {
