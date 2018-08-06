@@ -1,5 +1,5 @@
 .intro {
-
+  min-height: 100%;
   .cover-container {
     margin-right: auto;
     margin-left: auto;
@@ -10,8 +10,8 @@
 
   .intro-arrow {
     position: absolute;
-    top: 90%;
     left: 50%;
+    bottom: 24px;
     margin: auto;
     & .arrow .fa {
       font-size: 50px;
@@ -19,11 +19,4 @@
       padding-top: 11%;
     }
   }
-
 }
-
-
-
-
-
- 

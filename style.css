@@ -13,10 +13,13 @@ body {
   margin: 0;
   padding: 0;
 }
+
 body {
   color: #000;
 }
-
+body .site-wrapper {
+  height: 100%;
+}
 embed,
 iframe,
 img,
@@ -161,7 +164,6 @@ textarea:focus {
   margin: 0 auto;
 }
 
-
 /*
  * WordPress
  */
@@ -232,7 +234,6 @@ img.alignright,
  */
 
 .intro {
-  height: 758px;
   vertical-align: top;
   color: #fff;
 }
