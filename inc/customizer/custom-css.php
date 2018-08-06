@@ -24,7 +24,7 @@ function latte_custom_css() {
 <?php if( isset($latte_about_display) && $latte_about_display != 1 ): ?>
 <?php if(!empty($latte_about_background_color)) : ?>
 .about {
-	background: <?php echo esc_html($latte_about_background_color); ?>;
+	/* background: <?php echo esc_html($latte_about_background_color); ?>; */
 }
 <?php endif; ?>
 <?php endif; ?>
@@ -32,28 +32,28 @@ function latte_custom_css() {
 <?php if( isset($latte_services_display) && $latte_services_display != 1 ): ?>
 <?php if(!empty($latte_services_background_color)) : ?>
 .services {
-	background: <?php echo esc_html($latte_services_background_color); ?>;
+	/* background: <?php echo esc_html($latte_services_background_color); ?>; */
 }
 <?php endif; ?>
 <?php endif; ?>
 <?php if( isset($latte_subscribe_display) && $latte_subscribe_display != 1 ): ?>
 <?php if(!empty($latte_subscribe_background_color)) : ?>
 .subscribe {
-	background: <?php echo esc_html($latte_subscribe_background_color); ?>;
+	/* background: <?php echo esc_html($latte_subscribe_background_color); ?>; */
 }
 <?php endif; ?>
 <?php endif; ?>
 <?php if( isset($latte_skills_display) && $latte_skills_display != 1 ): ?>
 <?php if(!empty($latte_skills_background_color)) : ?>
 .skills {
-	background: <?php echo esc_html($latte_skills_background_color); ?>;
+	/* background: <?php echo esc_html($latte_skills_background_color); ?>; */
 }
 <?php endif; ?>
 <?php endif; ?>
 <?php if( isset($latte_blogposts_display) && $latte_blogposts_display != 1 ): ?>
 <?php if(!empty($latte_blogposts_background_color)) : ?>
 .blogposts {
-	background: <?php echo esc_html($latte_blogposts_background_color); ?>;
+	/* background: <?php echo esc_html($latte_blogposts_background_color); ?>; */
 }
 <?php endif; ?>
 <?php endif; ?>

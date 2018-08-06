@@ -15,8 +15,8 @@ body {
 }
 body {
   color: #000;
-  font-family: "Open Sans", sans-serif;
 }
+
 embed,
 iframe,
 img,
@@ -160,9 +160,7 @@ textarea:focus {
 .row {
   margin: 0 auto;
 }
-.lead {
-  font-family: "Sanchez", sans-serif;
-}
+
 
 /*
  * WordPress
@@ -238,13 +236,7 @@ img.alignright,
   vertical-align: top;
   color: #fff;
 }
-.intro .cover-container {
-  margin-right: auto;
-  margin-left: auto;
-  padding: 100px 0;
-  text-align: center;
-  margin-top: 25%;
-}
+
 .intro .inner {
   padding: 30px;
 }
@@ -257,12 +249,11 @@ img.alignright,
 }
 
 .intro .cover-heading {
-  font-family: "Sanchez", sans-serif;
   font-size: 50px;
 }
+
 @media only screen and (min-width: 320px) and (max-width: 680px) and (orientation: portrait) {
   .intro .cover-heading {
-    font-family: "Sanchez", sans-serif;
     font-size: 30px;
   }
 }
@@ -288,7 +279,6 @@ img.alignright,
 }
 .about .about-header h2 {
   font-size: 40px;
-  font-family: "Sanchez", sans-serif;
   font-weight: bold;
 }
 .about .lead {
@@ -312,7 +302,6 @@ img.alignright,
 }
 .social h2 {
   font-size: 40px;
-  font-family: "Sanchez", sans-serif;
   font-weight: bold;
 }
 .social .row .social-box {
@@ -370,7 +359,6 @@ img.alignright,
 .services h2 {
   text-align: center;
   font-size: 40px;
-  font-family: "Sanchez", sans-serif;
   font-weight: bold;
 }
 .services h3 {
@@ -427,7 +415,6 @@ img.alignright,
 }
 .subscribe h2 {
   font-size: 40px;
-  font-family: "Sanchez", sans-serif;
   font-weight: bold;
   color: #fff;
 }
@@ -488,7 +475,6 @@ img.alignright,
 }
 .skills h2 {
   font-size: 40px;
-  font-family: "Sanchez", sans-serif;
   font-weight: bold;
 }
 .skills h3 {
@@ -585,7 +571,6 @@ img.alignright,
 }
 .blogposts h2 {
   font-size: 40px;
-  font-family: "Sanchez", sans-serif;
   font-weight: bold;
 }
 .blogposts h3 {
@@ -656,7 +641,6 @@ img.alignright,
   padding: 0 20px;
 }
 .archive-header .cover-heading {
-  font-family: "Sanchez", sans-serif;
   font-size: 50px;
 }
 .post-header {
@@ -678,7 +662,6 @@ img.alignright,
   padding: 0 20px;
 }
 .post-header .cover-heading {
-  font-family: "Sanchez", sans-serif;
   font-size: 50px;
 }
 .post-header .back {
@@ -903,7 +886,6 @@ article.search-results {
   margin-left: 2%;
 }
 h2.comments-title {
-  font-family: "Open Sans", Helvetica Neue, Sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
@@ -913,7 +895,6 @@ h2.comments-title {
   margin-top: 15px;
 }
 h2.screen-reader-text {
-  font-family: "Open Sans", Helvetica Neue, Sans-serif;
   font-size: 18px;
   line-height: 24px;
   font-weight: 400;
@@ -1031,7 +1012,6 @@ h2.screen-reader-text {
   background: #222;
 }
 .comment-reply-title {
-  font-family: "Open Sans", Helvetica Neue, Sans-serif;
   font-size: 24px;
   line-height: 30px;
   font-weight: 500;
