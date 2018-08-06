@@ -1,8 +1,41 @@
-.parallax-video > video {
-    position: fixed;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-    z-index: -1;
-    top:0;
+.parallax-video-container{
+    min-height:100%;
+}
+
+.parallax-video-intro {
+    .hero-tag{
+        color: $white;
+        position: absolute;
+        text-align: center;
+        margin: auto;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%);
+
+        .cover-heading {
+            font-size: 30px;
+            @include mediaQuery(sm) {
+                font-size: 50px;
+            }
+        }
+    }
+    video {
+        position: fixed;
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .intro-arrow {
+        position: absolute;
+        left: 50%;
+        bottom: 24px;
+        margin: auto;
+        & .arrow .fa {
+          font-size: 50px;
+          color: $white;
+          padding-top: 11%;
+        }
+      }
 }

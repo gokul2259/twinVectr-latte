@@ -1,23 +1,9 @@
-<?php $latte_intro_avatar = get_theme_mod('latte_intro_avatar',
-get_template_directory_uri().'/assets/images/avatar.jpg' ); $latte_intro_scroll
-= get_theme_mod('latte_intro_scroll', '#about' ); ?>
+<?php 
+$latte_intro_scroll = get_theme_mod('latte_intro_scroll', '#about' ); 
+$bg_video_url = stripslashes(get_theme_mod('latte_parallax_background'));
+$blogInfo = get_bloginfo( 'name' );
+$blogDescription= get_bloginfo( 'description' );
+?>
 
-<section class="intro" id="intro">
-    <div class="container">
-        <div class="cover-container row">
-            <div class="inner cover col-md-12 col-sm-12 col-xs-12">
-                <h1 class="cover-heading"><?= bloginfo( 'name' )?></h1>
-                <h2 class=""><?= bloginfo( 'description' )?></h2>
-            </div>
-        </div>
-        <div class="row intro-arrow" >
-            <div>
-                <?php if(!empty($latte_intro_scroll)) : ?>
-                <a href="<?php echo esc_url($latte_intro_scroll); ?>" class="arrow">
-                    <i class="fa fa-angle-down"></i>
-                </a>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</section>
+<div class="parallax-video-container" js-react-module="backgroundVideo" data-react-props='<?php echo json_encode(['videoMp4' => $bg_video_url, 'blogInfo'=> $blogInfo, 'blogDesciption'=> $blogDescription, 'scrollTarget' => $latte_intro_scroll]) ?>' > </div>
+

@@ -11,14 +11,7 @@
 	$latte_subscribe_display = get_theme_mod('latte_subscribe_display', 1);
 	$latte_skills_display = get_theme_mod('latte_skills_display');
 	$latte_blogposts_display = get_theme_mod('latte_blogposts_display');
-	$bg_video_url = stripslashes(get_theme_mod('latte_parallax_background'));
-	?>
 	
-	<div js-react-module="backgroundVideo" data-react-props='<?php echo json_encode(['videoMp4' => $bg_video_url, 'videoWebm'=> $bg_video_url]) ?>' > 
-	</div>
-
-	<?php 
-
 	if( isset($latte_intro_display) && $latte_intro_display != 1 ):
 		get_template_part( 'sections/intro' );
 	endif;

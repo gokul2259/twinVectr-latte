@@ -12,12 +12,13 @@ class Video extends Component {
 
   handleScrollCalcualtion(event) {
     const vScrollTop = event.target.scrollingElement.scrollTop;
-    const heroText = document.querySelector(".cover-container");
+    const heroText = document.querySelector(".hero-tag");
+    
     heroText.style.transform = this.getScrollPosition(vScrollTop);
   }
 
   getScrollPosition(scrollTop) {
-    return `translate(0px, ${scrollTop / 9}%)`;
+    return `translate(-50%, ${scrollTop / 3}%)`;
   }
 
   render() {
@@ -28,20 +29,34 @@ class Video extends Component {
       autoPlay,
       controls,
       loop,
-      muted
+      muted,
+      taglinehead,
+      taglineSubhead,
+      scrollTarget,
     } = this.props;
 
     return (
-      <video
-        height={height}
-        width={width}
-        autoPlay={autoPlay}
-        loop={loop}
-        muted={muted}
-        controls={controls}
-      >
-        <source src={videoMp4} type="video/mp4" />
-      </video>
+      <section className="parallax-video-intro">
+        <video
+          height={height}
+          width={width}
+          autoPlay={autoPlay}
+          loop={loop}
+          muted={muted}
+          controls={controls}
+        >
+          <source src={videoMp4} type="video/mp4" />
+        </video>
+        <div className="hero-tag">
+            <h1 className="cover-heading">{taglinehead}</h1>
+            <h2>{taglineSubhead}</h2>
+        </div>
+        <div className="intro-arrow" >
+            <a href={scrollTarget} className="arrow">
+                <i className="fa fa-angle-down"></i>
+            </a>  
+        </div>
+    </section>  
     );
   }
 }
@@ -52,7 +67,10 @@ Video.defaultProps = {
   autoPlay: false,
   controls: false,
   loop: false,
-  muted: false
+  muted: false,
+  taglinehead: '',
+  taglineSubhead:'',
+  scrollTarget: '',
 };
 
 module.exports = Video;
