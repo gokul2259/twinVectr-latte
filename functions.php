@@ -138,7 +138,7 @@ function latte_scripts() {
 	$latte_animations_display = get_theme_mod('latte_animations_display');
 	$latte_menu_display = get_theme_mod('latte_menu_display');
 
-	wp_enqueue_style( 'latte_bootstrap_css', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css');
+	wp_enqueue_style( 'latte_bootstrap_css', get_template_directory_uri() . '/node_modules/bootstrap-grid/dist/grid.min.css');
 	wp_enqueue_style( 'latte_semantic_css', get_template_directory_uri() . '/node_modules/semantic-ui-css/semantic.min.css');
 	
 	wp_enqueue_style( 'latte_font_awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
@@ -148,7 +148,7 @@ function latte_scripts() {
 	wp_enqueue_style( 'latte_sanchez', '//fonts.googleapis.com/css?family=Sanchez:400,400italic');
 
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-	wp_enqueue_script( 'latte_bootstrap_js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array( 'jquery' ),'',true);
+	//wp_enqueue_script( 'latte_bootstrap_js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array( 'jquery' ),'',true);
 	//if( is_page_template( 'template-home.php' ) ) wp_enqueue_script( 'latte_parallax', get_template_directory_uri() . '/assets/js/parallax.min.js', array( 'jquery' ),'',true);
 	if( isset($latte_animations_display) && $latte_animations_display != 1 )wp_enqueue_script( 'latte_scrollreveal', get_template_directory_uri() . '/assets/js/scrollReveal.min.js', array( 'jquery' ),'',true);
 	if( isset($latte_menu_display) && $latte_menu_display != 1 )wp_enqueue_script( 'latte_classie', get_template_directory_uri() . '/assets/js/classie.js', array( 'jquery' ),'',true);
@@ -225,55 +225,4 @@ function latte_new_setup() {
 
 }
 
-// Custom comments style
-function latte_comment($comment, $args, $depth) {
-	$GLOBALS['comment'] = $comment;
-
-	switch ( $comment->comment_type ) :
-		case 'pingback' :
-
-
-		case 'trackback' :
-		?>
-			<li class="post pingback">
-				<p><?php _e( 'Pingback:', 'latte' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'latte' ), ' ' ); ?></p>
-		<?php
-		break;
-
-
-		default :
-		?>
-			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
-				<article id="comment-<?php comment_ID(); ?>" class="comment-body">
-					<footer>
-						<div class="comment-author vcard" >
-							<?php echo get_avatar( $comment, $args['avatar_size'] ); ?>
-							<?php printf( __( '<span>%s </span><span class="says">says:</span>', 'latte' ), sprintf( '<b class="fn">%s</b>', get_comment_author_link() ) ); ?>
-						</div><!-- .comment-author .vcard -->
-						<?php if ( $comment->comment_approved == '0' ) : ?>
-							<em><?php _e( 'Your comment is awaiting moderation.', 'latte' ); ?></em>
-							<br />
-						<?php endif; ?>
-						<div class="comment-metadata">
-							<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>" class="comment-permalink">
-								<time class="comment-published" datetime="<?php comment_time( 'Y-m-d\TH:i:sP' ); ?>" title="<?php comment_time( _x( 'l, F j, Y, g:i a', 'comment time format', 'latte' ) ); ?>" itemprop="commentTime">
-									<?php printf( __( '%1$s at %2$s', 'latte' ), get_comment_date(), get_comment_time() ); ?>
-								</time>
-							</a>
-							<?php edit_comment_link( __( '(Edit)', 'latte' ), ' ' );?>
-						</div><!-- .comment-meta .commentmetadata -->
-					</footer>
-
-					<div class="comment-content"><?php comment_text(); ?></div>
-
-					<div class="reply">
-						<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-					</div><!-- .reply -->
-				</article><!-- #comment-## -->
-
-<?php
-		break;
-
-	endswitch;
-}
 ?>

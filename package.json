@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap-grid": "^3.0.1",
     "eslint": "^5.2.0",
     "glob": "^7.1.2",
     "grunt-sass": "^3.0.1",
