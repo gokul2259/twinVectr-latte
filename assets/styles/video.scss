@@ -1,5 +1,21 @@
 .parallax-video-container{
     min-height:100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.circle {
+    font-size: 45px;
+    margin-top: -33px;
+    &:before, &:after{
+        position: relative;
+        content: "";
+        display: inline-block;
+        width: 350px;
+        margin: 0 6px;
+        top: -1px;
+        border-top: 2px solid $white;
+    }
+
 }
 
 .parallax-video-intro {
@@ -11,6 +27,7 @@
         top: 40%;
         left: 50%;
         transform: translate(-50%);
+        width: 900px;
 
         .cover-heading {
             font-size: 30px;

@@ -13,13 +13,21 @@ class Video extends Component {
   handleScrollCalcualtion(event) {
     const vScrollTop = event.target.scrollingElement.scrollTop;
     const heroText = document.querySelector(".hero-tag");
-    
     heroText.style.transform = this.getScrollPosition(vScrollTop);
   }
 
   getScrollPosition(scrollTop) {
     return `translate(-50%, ${scrollTop / 3}%)`;
   }
+
+  heroTagUnderline() {
+    return (
+      <div>
+        <div className="circle textCenter">.</div>
+      </div>
+    );
+  }
+
 
   render() {
     const {
@@ -49,6 +57,7 @@ class Video extends Component {
         </video>
         <div className="hero-tag">
             <h1 className="cover-heading">{taglinehead}</h1>
+            {this.heroTagUnderline()}
             <h2>{taglineSubhead}</h2>
         </div>
         <div className="intro-arrow" >

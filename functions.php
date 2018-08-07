@@ -6,7 +6,6 @@
 */
 
 require_once( trailingslashit( get_template_directory() ) . "/inc/customizer/customizer.php" );
-require_once( trailingslashit( get_template_directory() ) . "/inc/customizer/custom-css.php" );
 require_once( trailingslashit( get_template_directory() ) . "/inc/widgets/latte-services.php" );
 require_once( trailingslashit( get_template_directory() ) . "/inc/widgets/latte-skills.php" );
 require_once( trailingslashit( get_template_directory() ) . "/inc/other/post-formats.php" );
