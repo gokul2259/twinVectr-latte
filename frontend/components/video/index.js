@@ -17,7 +17,7 @@ class Video extends Component {
   }
 
   getScrollPosition(scrollTop) {
-    return `translate(-50%, ${scrollTop / 3}%)`;
+    return `translate(-50%, ${scrollTop / 4}%)`;
   }
 
   heroTagUnderline() {
