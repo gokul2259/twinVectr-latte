@@ -47,12 +47,32 @@
     .intro-arrow {
         position: absolute;
         left: 50%;
+        padding-top: 50px;
+        transform: translate(-50%);
         bottom: 24px;
         margin: auto;
-        & .arrow .fa {
-          font-size: 50px;
-          color: $white;
-          padding-top: 11%;
+        .arrow{
+            &:before{
+                display: inline-block;
+                font-size: 50px;
+                color: $white;
+                font-family: FontAwesome;
+                content: "\f107";
+            }
+            &.noBefore::before {
+                display: none;
+            }
+        }
+  
+        span {
+            display: none;
+            position: relative;
+            color: $white;
+            font-size: 12px;
+            left: -2px;
+            top: -12px; 
         }
       }
+
+
 }

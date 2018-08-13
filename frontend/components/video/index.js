@@ -28,6 +28,16 @@ class Video extends Component {
     );
   }
 
+  swipeDownTextchange(event) {
+      event.currentTarget.querySelector('.arrow').classList.toggle("noBefore");
+      event.currentTarget.querySelector('span').style.display =  'block';   
+  }
+
+  swipeDownArrowchange(event) {
+    event.currentTarget.querySelector('span').style.display=  'none';
+    event.currentTarget.querySelector('.arrow').classList.toggle("noBefore");
+  }
+
 
   render() {
     const {
@@ -60,11 +70,11 @@ class Video extends Component {
             {this.heroTagUnderline()}
             <h2>{taglineSubhead}</h2>
         </div>
-        <div className="intro-arrow" >
-            <a href={scrollTarget} className="arrow">
-                <i className="fa fa-angle-down"></i>
-            </a>  
-        </div>
+        <a href={scrollTarget} className="intro-arrow" onMouseOver={this.swipeDownTextchange} onMouseOut={this.swipeDownArrowchange}>
+          <div className="arrow">    
+              <span className="arrowIcon"> SCROLL DOWN </span>
+          </div>
+        </a>
     </section>  
     );
   }
