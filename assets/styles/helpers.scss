@@ -1,4 +1,33 @@
 .textCenter {
-    text-align: center;
-    margin: auto;
+  text-align: center;
+  margin: auto;
+}
+
+// margin factory
+$spaceamounts: (
+  5,
+  10,
+  15,
+  20,
+  25,
+  30,
+  35,
+  40,
+  45,
+  50,
+  75,
+  100
+); // Adjust this to include the pixel amounts you need.
+$sides: (Top, Bottom, Left, Right); // Leave this variable alone
+
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .margin#{$side}#{$space} {
+      margin-#{$side}: #{$space}px !important;
+    }
+
+    .padding#{$side}#{$space} {
+      padding-#{$side}: #{$space}px !important;
+    }
+  }
 }
