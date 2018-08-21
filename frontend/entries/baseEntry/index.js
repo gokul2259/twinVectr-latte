@@ -1,10 +1,10 @@
-const _ = require('lodash');
-const React = require('react');
-const ReactDOM = require('react-dom');
-const { Provider } = require('react-redux');
-const { combineReducers, createStore, applyMiddleware } = require('redux');
-const thunk = require('redux-thunk').default;
-const recentWorksReducer = require('modules/recentWorks/recentWorks-reducer.js');
+const _ = require("lodash");
+const React = require("react");
+const ReactDOM = require("react-dom");
+const { Provider } = require("react-redux");
+const { combineReducers, createStore, applyMiddleware } = require("redux");
+const thunk = require("redux-thunk").default;
+const recentWorksReducer = require("modules/recentWorks/recentWorks-reducer.js");
 
 function isReactReduxsetup() {
   return window.store;
@@ -15,42 +15,49 @@ function setupInitialStore() {
 }
 
 function createReducer(asyncReducers = {}) {
-  const reducers = Object.assign({}, {recentWorks: recentWorksReducer}, asyncReducers);
+  const reducers = Object.assign(
+    {},
+    { recentWorks: recentWorksReducer },
+    asyncReducers
+  );
   return combineReducers(reducers);
 }
 
 function configureStore() {
   const initialState = {};
-  const store = createStore(createReducer({}), initialState, applyMiddleware(thunk));
+  const store = createStore(
+    createReducer({}),
+    initialState,
+    applyMiddleware(thunk)
+  );
   return store;
 }
 
 function lazyRenderReactElements(store, scope = document) {
-  const nodes = scope.querySelectorAll('[js-react-module]');
+  const nodes = scope.querySelectorAll("[js-react-module]");
   _.forEach(nodes, node => lazyRenderReactElementsAtNode(node, store));
 }
 
 function lazyRenderReactElementsAtNode(renderNode, store) {
   const props = getPropsAtNode(renderNode);
-  const render = (ReactElement) => {
+  const render = ReactElement => {
     renderReactElementToNode(ReactElement, renderNode, store, props);
   };
 
   const classPath = getReactElementClassPath(renderNode);
 
-  if(classPath) {
+  if (classPath) {
     importReactElement(classPath).then(render);
   }
 }
 
-
 function getPropsAtNode(renderNode) {
-  const domElementProps = renderNode.getAttribute('data-react-props');
+  const domElementProps = renderNode.getAttribute("data-react-props");
   return JSON.parse(domElementProps);
 }
 
 function getReactElementClassPath(renderNode) {
-  return renderNode.getAttribute('js-react-module');
+  return renderNode.getAttribute("js-react-module");
 }
 
 function importReactElement(classPath) {
@@ -58,9 +65,9 @@ function importReactElement(classPath) {
 }
 
 function initPage(reactElementNodeIds = {}) {
-  if(isReactReduxsetup()) {
+  if (isReactReduxsetup()) {
     window.isReactReduxSettingUp = false;
-    return new Promise((resolve)=> {
+    return new Promise(resolve => {
       renderEverything(reactElementNodeIds);
       resolve();
     });
@@ -68,7 +75,7 @@ function initPage(reactElementNodeIds = {}) {
     setTimeout(() => initPage(reactElementNodeIds), 10);
   } else {
     window.isReactReduxSettingUp = true;
-    return new Promise((resolve)=> {
+    return new Promise(resolve => {
       setupInitialStore();
       resolve();
     }).then(() => renderEverything(reactElementNodeIds));
@@ -82,33 +89,43 @@ function renderEverything(reactElementNodeIds) {
 }
 
 function renderReactElementsToNodeByIds(elementByNodeIds, store) {
- _.each(elementByNodeIds, (ReactComponent, destinationId) => renderReactElementToNodeById(
-   ReactComponent, destinationId, store));
+  _.each(elementByNodeIds, (ReactComponent, destinationId) =>
+    renderReactElementToNodeById(ReactComponent, destinationId, store)
+  );
 }
 
-
-function renderReactElementToNodeById(ReactComponent, destinationNodeId, store) {
+function renderReactElementToNodeById(
+  ReactComponent,
+  destinationNodeId,
+  store
+) {
   const destinationNode = document.getElementById(destinationNodeId);
-  if(destinationNodeId === null) {
+  if (destinationNodeId === null) {
     return null;
   }
-  renderReactElementToNode(ReactComponent, destinationNode, store)
+  renderReactElementToNode(ReactComponent, destinationNode, store);
 }
 
-function renderReactElementToNode(ReactComponent, destinationNode, store, props = {}) {
-
-  if(!destinationNode) {
+function renderReactElementToNode(
+  ReactComponent,
+  destinationNode,
+  store,
+  props = {}
+) {
+  if (!destinationNode) {
     return null;
   }
 
-  const WrappedComponent  = ReactComponent.default;
+  const WrappedComponent = ReactComponent.default;
 
   ReactDOM.render(
     <Provider store={store}>
-     <WrappedComponent {...props}/>
-    </Provider>, destinationNode );
+      <WrappedComponent {...props} />
+    </Provider>,
+    destinationNode
+  );
 }
 
 module.exports = {
-  initPage,
+  initPage
 };
