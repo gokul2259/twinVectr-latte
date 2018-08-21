@@ -22,8 +22,7 @@
 
 	<?php if( isset($latte_menu_display) && $latte_menu_display != 1 ): ?>
 
-		<nav class="pmenu pmenu-vertical pmenu-left" id="pmenu">
-			<h3 id="hideLeftPush"><?php _e( 'Menu', 'latte' ); ?> <i class="fa fa-arrow-right"></i></h3>
+		<nav class="pmenu" id="pmenu">
 			<?php
 			wp_nav_menu(array(
 				'theme_location' => 'primary',
@@ -33,7 +32,5 @@
 			));
 			?>
 		</nav>
-
-		<a id="showLeftPush" class="fa fa-bars"></a>
 
 	<?php endif; ?>
