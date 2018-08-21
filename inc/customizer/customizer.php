@@ -451,6 +451,7 @@ function latte_customize_register($wp_customize) {
 		'settings' => 'latte_about_avatar'
 	)));
 
+
 	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'latte_about_parallax_image1', array(
 		'label' => __('Image1', 'latte'),
 		'section' => 'latte_about_content',
@@ -466,7 +467,32 @@ function latte_customize_register($wp_customize) {
 	)));
 
 
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'latte_about_avatar_image_1', array(
+		'label' => __('Image', 'latte'),
+		'section' => 'latte_about_content',
+		'priority' => 5,
+		'settings' => 'latte_about_avatar_image_1'
+	)));
 
+
+	$wp_customize->add_setting('latte_about_avatar_image_1', array(
+		'default' => get_template_directory_uri().'/assets/images/383x383.png',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw'
+	));
+
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'latte_about_avatar_image_2', array(
+		'label' => __('Image', 'latte'),
+		'section' => 'latte_about_content',
+		'priority' => 5,
+		'settings' => 'latte_about_avatar_image_2'
+	)));
+
+	$wp_customize->add_setting('latte_about_avatar_image_2', array(
+		'default' => get_template_directory_uri().'/assets/images/383x383.png',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw'
+	));
 
 	$wp_customize->add_setting('latte_about_name', array(
 		'default' => esc_html__('John Doe', 'latte'),

@@ -139,6 +139,7 @@ function latte_scripts() {
 
 	wp_enqueue_style( 'latte_bootstrap_css', get_template_directory_uri() . '/node_modules/bootstrap-grid/dist/grid.min.css');
 	wp_enqueue_style( 'latte_semantic_css', get_template_directory_uri() . '/node_modules/semantic-ui-css/semantic.min.css');
+	wp_enqueue_style('baseStyle', get_template_directory_uri() . '/dist/styles/minified/base.min.css');
 	
 	wp_enqueue_style( 'latte_font_awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css');
 	wp_enqueue_style( 'latte_style', get_stylesheet_uri());
@@ -196,7 +197,7 @@ function latte_customizer_js() {
 
 
 // add custom css
-wp_enqueue_style('baseStyle', get_template_directory_uri() . '/dist/styles/minified/base.min.css');
+
 
 // add React bundle
 

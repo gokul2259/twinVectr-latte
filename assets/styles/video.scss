@@ -1,78 +1,74 @@
-.parallax-video-container{
-    min-height:100%;
-    background: rgba(0, 0, 0, 0.7);
-}
-
 .circle {
-    font-size: 45px;
-    margin-top: -33px;
-    &:before, &:after{
-        position: relative;
-        content: "";
-        display: inline-block;
-        width: 350px;
-        margin: 0 6px;
-        top: -1px;
-        border-top: 2px solid $white;
-    }
-
+  font-size: 45px;
+  margin-top: -33px;
+  &:before,
+  &:after {
+    position: relative;
+    content: "";
+    display: inline-block;
+    width: 350px;
+    margin: 0 6px;
+    top: -1px;
+    border-top: 2px solid $white;
+  }
 }
 
 .parallax-video-intro {
-    .hero-tag{
-        color: $white;
-        position: absolute;
-        text-align: center;
-        margin: auto;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%);
-        width: 900px;
+  position: relative;
+  min-height: 800px;
+  background: rgba(0, 0, 0, 0.7);
+  .hero-tag {
+    color: $white;
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 900px;
 
-        .cover-heading {
-            font-size: 30px;
-            @include mediaQuery(sm) {
-                font-size: 50px;
-            }
-        }
-    }
-    video {
-        position: fixed;
-        min-width: 100%;
-        min-height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }
-
-    .intro-arrow {
-        position: absolute;
-        left: 50%;
-        padding-top: 50px;
-        transform: translate(-50%);
-        bottom: 24px;
-        margin: auto;
-        .arrow{
-            &:before{
-                display: inline-block;
-                font-size: 50px;
-                color: $white;
-                font-family: FontAwesome;
-                content: "\f107";
-            }
-            &.noBefore::before {
-                display: none;
-            }
-        }
-  
-        span {
-            display: none;
-            position: relative;
-            color: $white;
-            font-size: 12px;
-            left: -2px;
-            top: -12px; 
-        }
+    .cover-heading {
+      font-size: 30px;
+      @include mediaQuery(sm) {
+        font-size: 50px;
       }
+    }
+  }
+  video {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
 
+  .intro-arrow {
+    position: absolute;
+    left: 50%;
+    padding-top: 50px;
+    transform: translate(-50%);
+    bottom: 24px;
+    margin: auto;
+    .arrow {
+      &:before {
+        display: inline-block;
+        font-size: 50px;
+        color: $white;
+        font-family: FontAwesome;
+        content: "\f107";
+      }
+      &.noBefore::before {
+        display: none;
+      }
+    }
 
+    span {
+      display: none;
+      position: relative;
+      color: $white;
+      font-size: 12px;
+      left: -2px;
+      top: -12px;
+    }
+  }
 }
