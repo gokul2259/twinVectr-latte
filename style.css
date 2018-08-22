@@ -757,102 +757,7 @@ article.search-results {
   margin-top: 50px;
 }
 
-/*
- * Push Menu
- */
-.pmenu {
-  background: #222;
-  position: fixed;
-  overflow-y: auto;
-}
-.pmenu h3 {
-  color: #fff;
-  font-size: 1.9em;
-  padding: 20px;
-  margin: 0;
-  font-weight: 300;
-  background: #1a1a1a;
-}
-.pmenu a {
-  display: block;
-  color: #fff;
-  font-size: 1.1em;
-  font-weight: 300;
-}
-.pmenu a:hover {
-  text-decoration: none;
-  background: #1a1a1a;
-}
-.pmenu-vertical {
-  width: 240px;
-  height: 100%;
-  top: 0;
-  z-index: 1000;
-}
-.pmenu-vertical a {
-  border-bottom: 2px solid #1a1a1a;
-  padding: 1em;
-}
-.pmenu-left {
-  left: -240px;
-}
-.pmenu-left.pmenu-open {
-  left: 0px;
-}
-.pmenu-push {
-  overflow-x: hidden;
-  position: relative;
-  left: 0;
-}
-.pmenu-push-toright {
-  left: 240px;
-}
-.pmenu,
-.pmenu-push {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-.pmenu .fa-arrow-right {
-  font-size: 20px;
-}
-#showLeftPush {
-  position: fixed;
-  background: #fff;
-  color: #000;
-  z-index: 100;
-  display: block;
-  padding: 0px;
-  width: 50px;
-  top: 20px;
-  left: 20px;
-  font-size: 18px;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.2s ease 0s;
-  border-radius: 30px;
-  box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.1);
-  line-height: 50px;
-}
-.pmenu-push-toright #showLeftPush {
-  left: 260px !important;
-}
-.latte-push-menu,
-.latte-push-menu .sub-menu {
-  padding: 0;
-  word-wrap: break-all;
-}
-.menu-item-has-children > .sub-menu {
-  display: none;
-}
-.menu-item-has-children:hover > .sub-menu {
-  display: block;
-}
-.latte-push-menu a {
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-}
+
 .comments-area {
   margin-top: 40px;
   float: left;
@@ -1098,15 +1003,6 @@ input.searchform-button:active {
   }
 }
 
-@media screen and (max-height: 422px) {
-  .pmenu-vertical {
-    font-size: 90%;
-    width: 190px;
-  }
-  .pmenu-push-toright {
-    left: 190px;
-  }
-}
 
 @media screen and (max-width: 422px) {
   .blog .pager li > a,
