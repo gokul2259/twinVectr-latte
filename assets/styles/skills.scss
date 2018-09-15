@@ -1,18 +1,31 @@
-.skills {
-    .skillbar-title {
-        background: $black !important;
-        span {
-            display: inline-block !important;
-            position: relative;
-            img {
-                max-width: 100%;
-                max-height: 71%;
-            }
-            &.skill-logo {
-                top: 5px;
-                float: left !important;
-                padding: 0 0 0 5px;
-            }
-        }
+.skills-section {
+    width: 100%;
+    background: rgba(34, 36, 34, 1); 
+    height: 600px;
+    padding-top: 40px;
+    color: $white;
+    
+    .skills-wrapper{
+        vertical-align: middle;
+        position: relative;
     }
+
+    .skills-header-parallax {
+        font-size: 50px;
+        font-weight: normal;
+        padding-bottom: 40px;
+    }
+
+    .circular-bar-opacity {
+        opacity: 0;
+        animation-name: progressBarFadein;
+        animation-fill-mode: forwards;
+        animation-timing-function: linear;
+    }
+
+    @keyframes progressBarFadein {
+        0%   { opacity: 0; }
+        100% { opacity: .8; }
+    }
+
 }

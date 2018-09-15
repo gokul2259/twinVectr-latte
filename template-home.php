@@ -20,7 +20,7 @@
 		get_template_part( 'sections/about' );
 	endif;
 
-       if( isset($latte_skills_display) && $latte_skills_display != 1 ):
+    if( isset($latte_skills_display) && $latte_skills_display != 1 ):
 		get_template_part( 'sections/skills' );
 	endif;
 	
