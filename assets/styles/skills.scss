@@ -1,19 +1,15 @@
 .skills-section {
     width: 100%;
     background: rgba(34, 36, 34, 1); 
-    height: 600px;
-    padding-top: 40px;
+    min-height: 750px;
     color: $white;
-    
-    .skills-wrapper{
-        vertical-align: middle;
-        position: relative;
-    }
+
+
 
     .skills-header-parallax {
-        font-size: 50px;
+        @extend .section--header;
         font-weight: normal;
-        padding-bottom: 40px;
+        padding: $vertical--space-lg 0;
     }
 
     .circular-bar-opacity {
