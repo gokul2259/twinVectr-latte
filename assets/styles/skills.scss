@@ -1,27 +1,34 @@
 .skills-section {
-    width: 100%;
-    background: rgba(34, 36, 34, 1); 
-    min-height: 750px;
-    color: $white;
+  width: 100%;
+  background: rgba(34, 36, 34, 1);
 
+  @include respond-to(sm) {
+    min-height: 950px;
+  }
+  @include respond-to(md) {
+    min-height: 650px;
+  }
+  color: $white;
 
+  .skills-header-parallax {
+    @extend .section--header;
+    font-weight: normal;
+    padding: $vertical--space-lg 0;
+  }
 
-    .skills-header-parallax {
-        @extend .section--header;
-        font-weight: normal;
-        padding: $vertical--space-lg 0;
+  .circular-bar-opacity {
+    opacity: 0;
+    animation-name: progressBarFadein;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+  }
+
+  @keyframes progressBarFadein {
+    0% {
+      opacity: 0;
     }
-
-    .circular-bar-opacity {
-        opacity: 0;
-        animation-name: progressBarFadein;
-        animation-fill-mode: forwards;
-        animation-timing-function: linear;
+    100% {
+      opacity: 0.8;
     }
-
-    @keyframes progressBarFadein {
-        0%   { opacity: 0; }
-        100% { opacity: .8; }
-    }
-
+  }
 }

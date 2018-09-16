@@ -6,11 +6,21 @@
   .parllax-text-name {
     position: absolute;
     left: -10%;
-    font-size: 60px;
+    @include respond-to(sm) {
+      font-size: 40px;
+    }
+    @include respond-to(md) {
+      font-size: 60px;
+    }
   }
 
   .parllax-text-content {
     position: relative;
-    top: 100px;
+    @include respond-to(sm) {
+      top: 60px;
+    }
+    @include respond-to(md) {
+      top: 100px;
+    }
   }
 }
