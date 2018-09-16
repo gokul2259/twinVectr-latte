@@ -6,17 +6,24 @@
     position: relative;
     content: "";
     display: inline-block;
-    width: 350px;
+    width: 150px;
     margin: 0 6px;
     top: -1px;
     border-top: 2px solid $white;
+    @include respond-to(md) {
+      width: 350px;
+    }
   }
 }
 
 .parallax-video-intro {
   position: relative;
-  min-height: 800px;
+  min-height: 600px;
   background: rgba(0, 0, 0, 0.7);
+
+  @include respond-to(md) {
+    min-height: 800px;
+  }
   .hero-tag {
     color: $white;
     position: absolute;
@@ -25,12 +32,24 @@
     top: 43%;
     left: 50%;
     transform: translate(-50%);
-    width: 900px;
+    width: 100%;
 
-    .cover-heading {
+    @include respond-to(md) {
+      width: 900px;
+    }
+    
+
+    h1{
       font-size: 30px;
-      @include mediaQuery(sm) {
+      @include respond-to(md) {
         font-size: 50px;
+      }
+    }
+
+    h2 {
+      font-size: 15px;
+      @include respond-to(md) {
+        font-size: 25px;
       }
     }
   }

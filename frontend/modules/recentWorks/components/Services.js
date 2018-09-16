@@ -27,11 +27,8 @@ class Services extends Component {
         return (
             <div>
                 <div className="container services-container">
-                    <div className="row">
-                        <header data-sr="ease-in-out wait 0.25s" className="services-header">
-                            <h2>{title}</h2>
-                            <h3>{subTitle}</h3>
-                        </header>
+                    <div className="row section--header">
+                        <h1>{title}</h1> 
                     </div>
                     <div className='row' style={flexStyle}>
                         {this.renderRecentWorkList()}

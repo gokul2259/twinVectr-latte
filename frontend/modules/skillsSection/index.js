@@ -40,7 +40,7 @@ class SkillsSection extends Component {
 
             if(item.title) {
                 return(
-                    <div className="col-sm-6 marginBottom30 circular-bar-opacity" key={key} style={fadeStyle}>
+                    <div className="col-xs-6 col-sm-6 marginBottom30 circular-bar-opacity" key={key} style={fadeStyle}>
                         <CircularProgressBar
                             percentage = {item.percentage}
                             strokeColor = {item.barbackground}
@@ -93,29 +93,27 @@ class SkillsSection extends Component {
         const {needToMount} = this.state;
         return ( 
             <section className="skills-section" id="skills">
-                <div className="skills-wrapper">
-                    <div
-                        smooth-parallax=""
-                        start-movement="0.05"
-                        end-movement="1"
-                        start-position-x=".3"
-                        end-position-x=".57"
-                        >
-                        <h1 className="skills-header-parallax">{sectionTitle}</h1>
-                    </div>
-                    
-                    <div className="container paddingTop30">
-                        <div className="row">
-                            <div className="col-sm-6 skils-circilar-bars">
-                                { needToMount && this.renderCircularSkills()}
-                            </div>
-                            <div className="col-sm-6 skils-circilar-bars">
-                                {needToMount && this.renderLineSkills()}
-                            </div>
+                <div
+                    smooth-parallax=""
+                    start-movement="0.05"
+                    end-movement="1"
+                    start-position-x="-.2"
+                    end-position-x=".1"
+                    >
+                    <h1 className="skills-header-parallax">{sectionTitle}</h1>
+                </div>
+                
+                <div className="container paddingTop30 paddingBottom30">
+                    <div className="row">
+                        <div className="col-xs-12 col-sm-6">
+                            { needToMount && this.renderCircularSkills()}
                         </div>
-                        
+                        <div className="col-xs-12 col-sm-6">
+                            {needToMount && this.renderLineSkills()}
+                        </div>
                     </div>
                 </div>
+                
 		    </section>  
          );
     }

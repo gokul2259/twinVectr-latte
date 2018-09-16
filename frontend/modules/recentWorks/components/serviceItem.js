@@ -23,6 +23,7 @@ const ServiceItem = (props) => {
                 header={title.rendered}
                 description={content}
                 extra={extra}
+                className="raised--z"
                 raised
                 centered
                 />
