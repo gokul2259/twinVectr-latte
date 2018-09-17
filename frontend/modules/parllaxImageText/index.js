@@ -27,17 +27,17 @@ class ParllaxImageText extends Component {
     } = this.props;
 
     return (
-      <section className="parallax-image paddingTop60">
+      <section className="parallax-image">
         <div className="container">
           <div className="row">
-            <div className="col-xs-12 col-md-6">
+            <div className="col-xs-12 col-md-6 section-parallax--image">
               <MultiParllaxImage
                 mainImage={mainImage}
                 subImageOne={subImageOne}
                 subImageTwo={subImageTwo}
               />
             </div>
-            <div className="col-xs-12 col-md-6">
+            <div className="col-xs-12 col-md-6 section-parallax--text">
               <ParllaxText
                 aboutTitle={title}
                 subTitle={subtitle}

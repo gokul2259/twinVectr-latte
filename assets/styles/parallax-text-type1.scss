@@ -2,15 +2,29 @@
   position: relative;
   .parllax-text-title {
     color: $red;
+    font-size: 18px;
+    @include respond-to(md) {
+      font-size: 35px;
+    }
   }
   .parllax-text-name {
     position: absolute;
     left: -10%;
-    font-size: 60px;
+    font-size: 18px;
+
+    @include respond-to(md) {
+      font-size: 50px;
+    }
   }
 
   .parllax-text-content {
+    font-size: 13px;
     position: relative;
-    top: 100px;
+    top: 60px;
+
+    @include respond-to(md) {
+      top: 100px;
+      font-size: 17px;
+    }
   }
 }

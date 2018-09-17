@@ -1,14 +1,14 @@
 .services {
-    width: 100%;
-    background: #ffffff;
-    min-height: 750px;
-    
-    .card {
-        &.raised--z{
-            &:hover {
-                transform: translate3d(-5px, -5px, -10px);
-                box-shadow: 10px 10px 10px $light-gray;
-            }
-        }
+  width: 100%;
+  background: #ffffff;
+  @extend .section--height;
+
+  .card {
+    &.raised--z {
+      &:hover {
+        transform: translate3d(-5px, -5px, -10px);
+        box-shadow: 10px 10px 10px $light-gray;
+      }
     }
+  }
 }

@@ -6,7 +6,7 @@
     position: relative;
     content: "";
     display: inline-block;
-    width: 150px;
+    width: 143px;
     margin: 0 6px;
     top: -1px;
     border-top: 2px solid $white;
@@ -37,10 +37,9 @@
     @include respond-to(md) {
       width: 900px;
     }
-    
 
-    h1{
-      font-size: 30px;
+    h1 {
+      font-size: 27px;
       @include respond-to(md) {
         font-size: 50px;
       }
