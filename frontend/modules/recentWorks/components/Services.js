@@ -30,7 +30,7 @@ class Services extends Component {
                     <div className="row section--header">
                         <h1>{title}</h1> 
                     </div>
-                    <div className='row' style={flexStyle}>
+                    <div className='row service-box' style={flexStyle}>
                         {this.renderRecentWorkList()}
                     </div>
                 </div>
