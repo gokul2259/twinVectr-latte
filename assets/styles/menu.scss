@@ -12,8 +12,10 @@
   .latte-push-menu{
     float: right;
     li {
-      padding: 20px 40px 10px;
       display: inline-block;
+      a {
+        padding: 20px 40px 10px;
+      }
       &:hover {
         border-bottom: 3px solid $red;
         opacity: 0.8;

@@ -33,6 +33,17 @@
 			));
 			?>
 		</nav>
-		<nav id="mobile-primary-nav"> </nav>
+		<nav class="mobile-primary-nav"> 
+			<div id="mobile-primary-nav"></div>
+			<?php
+			wp_nav_menu(array(
+				'theme_location' => 'primary',
+				'menu' => __( 'Primary Menu', 'latte' ),
+				'container_class' => 'primary-menu-mobile',
+				'fallback_cb' => 'latte_new_setup',
+				'items_wrap' => '<ul class="latte-push-menu-mobile">%3$s</ul>'
+			));
+			?>
+		</nav>
 
 	<?php endif; ?>

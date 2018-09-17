@@ -5,14 +5,52 @@
     }
 }
 
-#mobile-primary-nav {
-    position: absolute;
-    top: 5%;
-    left: 5%;
-    z-index: 1001;
+.mobile-primary-nav {
 
     @include respond-to(lg) {
         visibility: hidden;
     }
+    
+    #mobile-primary-nav {
+        position: fixed;
+        top: 5%;
+        left: 5%;
+        z-index: 1001;
+    
+        @include respond-to(lg) {
+            visibility: hidden;
+        }
+    }
+    
+    .primary-menu-mobile {
+        position: fixed;
+        height: 100%;
+        width: 300px;
+        z-index:1000;
+        background: $dark-gray;
+        padding-top: 50px;
+        visibility: hidden;
+        opacity: 0.9;
+        transition-timing-function: linear;
+
+        @include respond-to(lg) {
+            display: none;
+        }
+
+        .latte-push-menu-mobile {
+            list-style-type: none;
+            li {
+                padding-top: 35px;
+                font-size: 25px;
+                a {
+                    color: $black;
+                    &:hover {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
 
 }
+
