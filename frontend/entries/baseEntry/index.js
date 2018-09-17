@@ -112,6 +112,7 @@ function renderReactElementToNode(
   store,
   props = {}
 ) {
+  
   if (!destinationNode) {
     return null;
   }
