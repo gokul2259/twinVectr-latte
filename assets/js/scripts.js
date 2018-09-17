@@ -3,7 +3,7 @@ jQuery(window).load(function() {
 	if( latte_script_var.latte_preloader_display != 1 ) {
 		/* Preloader */
 		jQuery(".status").fadeOut();
-		jQuery(".preloader").delay(1000).fadeOut("slow");
+		jQuery(".preloader").delay(400).fadeOut("slow");
 	}
 
 	if( latte_script_var.latte_animations_display != 1 ) {

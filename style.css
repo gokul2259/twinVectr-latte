@@ -132,22 +132,23 @@ textarea:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #fefefe;
+  background-color: black;
   z-index: 99999;
   height: 100%;
   width: 100%;
   overflow: hidden !important;
 }
 .status {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   position: absolute;
   left: 50%;
   top: 50%;
   background-image: url("assets/images/loader.gif");
   background-repeat: no-repeat;
   background-position: center;
-  margin: -100px 0 0 -100px;
+  background-size: contain;
+  transform: translate(-50%, -50%);
 }
 
 /*
