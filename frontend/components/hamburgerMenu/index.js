@@ -7,6 +7,15 @@ class HamburgerMobileMenu extends Component {
         this.state = { 
             open: false,
          }
+        this.hamburgerPanel = document.querySelector('.primary-menu-mobile');
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(!prevState.open) {
+            this.hamburgerPanel.style.visibility = 'visible'; 
+        } else {
+            this.hamburgerPanel.style.visibility = 'hidden'; 
+        }
     }
 
     handleClick() {
