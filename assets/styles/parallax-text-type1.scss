@@ -4,9 +4,9 @@
     color: $red;
   }
   .parllax-text-name {
-    position: absolute;
-    left: -10%;
     @include respond-to(sm) {
+      position: absolute;
+      left: -10%;
       font-size: 40px;
     }
     @include respond-to(md) {
@@ -15,8 +15,8 @@
   }
 
   .parllax-text-content {
-    position: relative;
     @include respond-to(sm) {
+      position: relative;
       top: 60px;
     }
     @include respond-to(md) {

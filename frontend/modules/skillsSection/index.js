@@ -102,15 +102,7 @@ class SkillsSection extends Component {
     const { needToMount } = this.state;
     return (
       <section className="skills-section" id="skills">
-        <div
-          smooth-parallax=""
-          start-movement="0.05"
-          end-movement="1"
-          start-position-x="-.2"
-          end-position-x=".1"
-        >
-          <h1 className="skills-header-parallax">{sectionTitle}</h1>
-        </div>
+        <h1 className="skills-header-parallax">{sectionTitle}</h1>
 
         <div className="container">
           <div className="row">

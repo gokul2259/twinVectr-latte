@@ -1,17 +1,10 @@
 .skills-section {
   width: 100%;
   background: rgba(34, 36, 34, 1);
-
-  @include respond-to(sm) {
-    min-height: 950px;
-  }
-  @include respond-to(md) {
-    min-height: 650px;
-  }
+  @extend .section--header;
   color: $white;
 
   .skills-header-parallax {
-    @extend .section--header;
     font-weight: normal;
     padding: $vertical--space-lg 0;
   }
