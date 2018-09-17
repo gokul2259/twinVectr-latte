@@ -48,6 +48,7 @@
     "path": "^0.12.7",
     "rc-progress": "^2.2.5",
     "react-circular-progressbar": "^1.0.0",
+    "react-hamburger-menu": "^1.1.1",
     "react-masonry-component": "^6.2.1",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",

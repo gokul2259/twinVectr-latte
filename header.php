@@ -27,10 +27,12 @@
 			wp_nav_menu(array(
 				'theme_location' => 'primary',
 				'menu' => __( 'Primary Menu', 'latte' ),
+				'container_class' => 'primary-menu-desktop',
 				'fallback_cb' => 'latte_new_setup',
 				'items_wrap' => '<ul class="latte-push-menu">%3$s</ul>'
 			));
 			?>
 		</nav>
+		<nav id="mobile-primary-nav"> </nav>
 
 	<?php endif; ?>

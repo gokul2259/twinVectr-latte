@@ -1,0 +1,18 @@
+.primary-menu-desktop {
+    visibility: hidden;
+    @include respond-to(lg) {
+        visibility: visible;
+    }
+}
+
+#mobile-primary-nav {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    z-index: 1001;
+
+    @include respond-to(lg) {
+        visibility: hidden;
+    }
+
+}
