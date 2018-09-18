@@ -75,7 +75,7 @@ class SkillsSection extends Component {
         if (item.title) {
           return (
             <div
-              className="col-sm-12 marginBottom30 circular-bar-opacity"
+              className="col-sm-12 linebar-skills-container circular-bar-opacity"
               key={key}
               style={fadeStyle}
             >
@@ -105,11 +105,11 @@ class SkillsSection extends Component {
         <h1 className="skills-header-parallax">{sectionTitle}</h1>
 
         <div className="container">
-          <div className="row">
-            <div className="col-xs-12 col-sm-6">
+          <div className="row skills-division">
+            <div className="skills-item-container col-xs-12 col-sm-6">
               {needToMount && this.renderCircularSkills()}
             </div>
-            <div className="col-xs-12 col-sm-6">
+            <div className="skills-item-container col-xs-12 col-sm-6">
               {needToMount && this.renderLineSkills()}
             </div>
           </div>

@@ -24,4 +24,30 @@
       opacity: 0.8;
     }
   }
+
+  .linebar-skills-container {
+    margin-bottom: 15px;
+    p{
+      margin: 0;
+    }
+    @include respond-to(lg) {
+      margin-bottom: 30px;
+    }
+  }
+
+  .skills-division {
+    
+    .skills-item-container:nth-child(2){
+      margin-top: 20px;
+    }
+    @include respond-to(md) {
+      .skills-item-container:nth-child(1){
+        margin-top: 15px;
+      }
+      .skills-item-container:nth-child(2){
+        margin-top: 0px;
+      }
+    }
+    
+  }
 }
