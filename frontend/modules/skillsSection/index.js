@@ -102,11 +102,12 @@ class SkillsSection extends Component {
     const { needToMount } = this.state;
     return (
       <section className="skills-section" id="skills">
-        <h1 className="skills-header-parallax">{sectionTitle}</h1>
-
-        <div className="container">
-          <div className="row skills-division">
-            <div className="skills-item-container col-xs-12 col-sm-6">
+       <div className="container">
+          <div className="row section--header">
+            <p>{sectionTitle}</p>
+          </div>
+          <div className="row skills-items">
+            <div className="col-xs-12 col-sm-6">
               {needToMount && this.renderCircularSkills()}
             </div>
             <div className="skills-item-container col-xs-12 col-sm-6">

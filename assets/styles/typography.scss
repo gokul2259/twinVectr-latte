@@ -2,9 +2,9 @@
 
 $base--vertical-space: 24px;
 
-$vertical--space-sm: calc(1.25 * #{$base--vertical-space});
-$vertical--space-md: calc(1.5 * #{$base--vertical-space});
-$vertical--space-lg: calc(1.75 * #{$base--vertical-space});
+$vertical--space-sm: calc(1.30 * #{$base--vertical-space});
+$vertical--space-md: calc(1.60 * #{$base--vertical-space});
+$vertical--space-lg: calc(1.90 * #{$base--vertical-space});
 
 .section--height {
   min-height: 650px;
