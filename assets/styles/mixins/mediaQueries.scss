@@ -1,6 +1,6 @@
 @mixin respond-to($size) {
   @if($size == 'sm') {
-      @media (min-width: 320px) {
+      @media (min-width: 450px) {
           @content;
       }
   }
