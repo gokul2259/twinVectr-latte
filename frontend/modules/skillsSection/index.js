@@ -107,7 +107,7 @@ class SkillsSection extends Component {
             <p>{sectionTitle}</p>
           </div>
           <div className="row skills-items">
-            <div className="col-xs-12 col-sm-6">
+            <div className="skills-item-container col-xs-12 col-sm-6">
               {needToMount && this.renderCircularSkills()}
             </div>
             <div className="skills-item-container col-xs-12 col-sm-6">
