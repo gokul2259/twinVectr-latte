@@ -1,14 +1,9 @@
 .skills-section {
   width: 100%;
   background: rgba(34, 36, 34, 1);
-  @extend .section--header;
   color: $white;
 
-  .skills-header-parallax {
-    font-weight: normal;
-    padding: $vertical--space-lg 0;
-  }
-
+  
   .circular-bar-opacity {
     opacity: 0;
     animation-name: progressBarFadein;
@@ -36,7 +31,6 @@
   }
 
   .skills-division {
-    
     .skills-item-container:nth-child(2){
       margin-top: 20px;
     }

@@ -28,7 +28,7 @@ class Services extends Component {
             <div>
                 <div className="container services-container">
                     <div className="row section--header">
-                        <h1>{title}</h1> 
+                        <p>{title}</p> 
                     </div>
                     <div className='row service-box' style={flexStyle}>
                         {this.renderRecentWorkList()}
