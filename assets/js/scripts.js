@@ -28,32 +28,13 @@ jQuery(document).ready(function($) {
 				}
 			}
 		});
-		if( latte_script_var.latte_parallax_background != '' ) {
-			/* Parallax */
-			//$('.site-wrapper').parallax({imageSrc: latte_script_var.latte_parallax_background, bleed: '10', androidFix: 'false'});
-		}
 	}
 
 	if( latte_script_var.latte_is_homepage != 1 ) {
-		if( latte_script_var.latte_skills_display != 1 ) {
-			/* Skillbar animation speed */
-			jQuery('.skillbar').each(function(){
-				jQuery(this).find('.skillbar-bar').animate({
-					width:jQuery(this).attr('data-percent')
-				},6000);
-			});
-		}
-		
-		/* Apply matchHeight to match services grid */
-		var byRow = $('body').hasClass('pmenu-push');
+
 		if( latte_script_var.latte_services_display != 1 ) {
-			$('.col-md-12').each(function() {
-				$(this).children('.service-box').matchHeight(byRow);
-			});
-		}
-		if( latte_script_var.latte_blogposts_display != 1 ) {
-			$('.col-md-12').each(function() {
-				$(this).children('.blog-item').matchHeight(byRow);
+			$('.service-box').children().each(function() {
+				$(this).matchHeight(true);
 			});
 		}
 	}
