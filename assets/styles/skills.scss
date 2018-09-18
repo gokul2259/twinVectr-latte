@@ -23,7 +23,7 @@
   .linebar-skills-container {
     margin-bottom: 15px;
     p{
-      margin: 0;
+      margin-bottom: 10px;
     }
     @include respond-to(lg) {
       margin-bottom: 30px;
