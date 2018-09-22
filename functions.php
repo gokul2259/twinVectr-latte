@@ -137,8 +137,8 @@ function latte_scripts() {
 	$latte_animations_display = get_theme_mod('latte_animations_display');
 	$latte_menu_display = get_theme_mod('latte_menu_display');
 
-	wp_enqueue_style( 'latte_bootstrap_css', get_template_directory_uri() . '/node_modules/bootstrap-grid/dist/grid.min.css');
-	wp_enqueue_style( 'latte_semantic_css', get_template_directory_uri() . '/node_modules/semantic-ui-css/semantic.min.css');
+	wp_enqueue_style( 'latte_bootstrap_css', get_template_directory_uri() . '/assets/styles/css/grid.min.css');
+	wp_enqueue_style( 'latte_semantic_css', get_template_directory_uri() . '/assets/styles/css/semantic.min.css');
 	wp_enqueue_style('baseStyle', get_template_directory_uri() . '/dist/styles/minified/base.min.css');
 	//wp_enqueue_style('progressBarStyles', get_template_directory_uri() . '/node_modules/react-circular-progressbar/dist/styles.css');
 	
