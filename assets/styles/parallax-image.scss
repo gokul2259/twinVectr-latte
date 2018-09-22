@@ -1,6 +1,10 @@
 .parllax-image-text {
-  height: 650px;
+  height: 700px;
   background: $white;
+
+  @include respond-to(md) {
+    bottom: 650px;
+  }
 }
 
 .parallax-image {
@@ -9,7 +13,7 @@
   transform: translateY(-50%);
 
   .section-parallax--image {
-    bottom: 45px;
+    bottom: 60px;
 
     @include respond-to(md) {
       bottom: 0;
@@ -35,10 +39,10 @@
       left: 5%;
       width: auto;
       z-index: 3;
-      height: 80px;
+      height: 120px;
 
       @include respond-to(md) {
-        height: 150px;
+        height: 190px;
       }
     }
     .multi-parllax-image-two {
@@ -47,10 +51,10 @@
       right: 5%;
       width: auto;
       z-index: 3;
-      height: 80px;
+      height: 120px;
 
       @include respond-to(md) {
-        height: 150px;
+        height: 190px;
       }
     }
   }
