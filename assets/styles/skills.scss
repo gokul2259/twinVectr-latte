@@ -48,5 +48,10 @@
         margin-top: 0px;
       }
     }
+    @include respond-to(lg) {
+      .skills-item-container:nth-child(2){
+        margin-top: 30px;
+      }
+    }
   }
 }
