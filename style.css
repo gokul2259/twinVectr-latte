@@ -134,14 +134,13 @@ textarea:focus {
   overflow: hidden !important;
 }
 .status {
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   position: absolute;
   left: 50%;
   top: 50%;
   background-image: url("assets/images/loader.gif");
-  background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
   background-size: contain;
   transform: translate(-50%, -50%);
 }
