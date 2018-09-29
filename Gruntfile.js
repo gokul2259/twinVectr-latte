@@ -4,8 +4,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-webpack');
     var webpackConfig = require('./webpack.config');
-
-
+    var webpackConfigProd = require('./webpack.production.config');
+    
     grunt.initConfig({
         pkg: grunt
             .file
@@ -24,7 +24,8 @@ module.exports = function (grunt) {
             }
         },
         webpack: {
-            webpackConfig
+            prod: webpackConfigProd,
+            dev: webpackConfig,
           },
         cssmin: {
             target: {
@@ -59,5 +60,5 @@ module.exports = function (grunt) {
         }
 		});
 		
-    grunt.registerTask('compass', ['sass', 'cssmin']);
+    grunt.registerTask('build-prod', ['webpack:prod', 'sass', 'cssmin']);
 };
