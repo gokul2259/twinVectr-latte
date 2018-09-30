@@ -301,6 +301,20 @@ function latte_customize_register($wp_customize) {
 		'mime_type' => 'video'
 	)));
 
+
+	$wp_customize->add_setting('latte_parallax_image_background', array(
+		'default' => get_template_directory_uri().'/assets/images/background.jpg',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'esc_url_raw'
+	));
+
+	$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'latte_parallax_image_background', array(
+		'section' => 'latte_general_background',
+		'label' => __('Parallax Image Background', 'latte'),
+	)));
+
+
 	$wp_customize->add_setting( 'latte_preloader_display', array(
 		'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'latte_sanitize_checkbox'
