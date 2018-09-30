@@ -20,6 +20,7 @@
   }
 }
 
+
 .parallax-video-intro {
   position: relative;
   min-height: 667px;
@@ -72,10 +73,7 @@
       h2 {
         font-size: 27px;
       }
-    }
-
-
-   
+    }  
   }
   video {
     position: fixed;
@@ -84,6 +82,13 @@
     object-fit: cover;
     z-index: -1;
   }
+
+  .intro-image{
+    position: fixed;
+    object-fit: cover;
+    z-index: -1;
+  }
+
 
   .intro-arrow {
     position: absolute;
