@@ -9,10 +9,11 @@ class BGVideo extends Component {
     }
 
     render() {
-        const { videoMp4, blogInfo, blogDesciption, scrollTarget } = this.props;
+        const { videoMp4, blogInfo, blogDesciption, scrollTarget, bgImage } = this.props;
         return (
                 <Video 
                     videoMp4 = {videoMp4}
+                    bgImage = {bgImage}
                     taglinehead = {blogInfo}
                     taglineSubhead = {blogDesciption}
                     scrollTarget = {scrollTarget}

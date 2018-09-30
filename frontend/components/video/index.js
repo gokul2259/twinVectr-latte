@@ -49,6 +49,7 @@ class Video extends Component {
       controls,
       loop,
       muted,
+      bgImage,
     } = this.props;
 
     if (this.screenWidth > 600) {
@@ -66,7 +67,7 @@ class Video extends Component {
       );
     } else {
       return (
-        <img className="intro-image" src="https://www.fonewalls.com/wp-content/uploads/720x1440-Background-HD-Wallpaper-039-600x1200.jpg" />
+        <img className="intro-image" src={bgImage} />
       );
     }
   }
@@ -106,6 +107,7 @@ Video.defaultProps = {
   taglinehead: '',
   taglineSubhead: '',
   scrollTarget: '',
+  bgImage:'',
 };
 
 module.exports = Video;
