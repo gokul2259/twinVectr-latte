@@ -23,7 +23,8 @@ class ParllaxImageText extends Component {
       subImageOne,
       subImageTwo,
       aboutName,
-      aboutContent
+      aboutContent,
+      windowSize,
     } = this.props;
 
     return (
@@ -39,10 +40,11 @@ class ParllaxImageText extends Component {
             </div>
             <div className="col-xs-12 col-md-6 section-parallax--text">
               <ParllaxText
-                aboutTitle={title}
-                subTitle={subtitle}
-                aboutContent={aboutContent}
-              />
+                  aboutTitle={title}
+                  subTitle={subtitle}
+                  aboutContent={aboutContent}
+                  windowSize = {windowSize}
+                />
             </div>
           </div>
         </div>

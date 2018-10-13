@@ -3,20 +3,21 @@ import React, { Component } from "react";
 class ParllaxText extends Component {
   constructor(props) {
     super(props);
+    this.state ={
+      isSmoothParallaxEnabled: props.windowSize > 600,
+    }
   }
 
   render() {
     const { aboutTitle, aboutContent, subTitle } = this.props;
+    const smoothParallax = this.state.isSmoothParallaxEnabled ? {
+      ['smooth-parallax']: ''
+    } : {};
+
     return (
-      <div
-        smooth-parallax=""
-        start-movement="0.05"
-        end-movement="1"
-        end-position-y="-.6"
-        className="parllax-text-container"
-      >
+      <div className="parllax-text-container">
         <div
-          smooth-parallax=""
+          {...smoothParallax}
           start-movement="0.05"
           end-movement="1"
           start-position-x=".2"
@@ -25,7 +26,7 @@ class ParllaxText extends Component {
           <h2 className="parllax-text-title">{aboutTitle}</h2>
         </div>
         <div
-          smooth-parallax=""
+           {...smoothParallax}
           start-movement="0.05"
           end-movement="1"
           start-position-x=".2"
@@ -33,7 +34,6 @@ class ParllaxText extends Component {
         >
           <p className="parllax-text-name">{subTitle}</p>
         </div>
-
         <p className="parllax-text-content">{aboutContent}</p>
       </div>
     );
