@@ -30,7 +30,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "node-sass": "^4.9.2",
-    "react": "^16.4.1",
+    "react": "^16.5.2",
     "react-dom": "^16.4.1",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
@@ -57,6 +57,7 @@
     "sass": "^1.10.1",
     "semantic-ui-css": "^2.3.3",
     "semantic-ui-react": "^0.82.1",
-    "smooth-parallax": "^1.1.2"
+    "smooth-parallax": "^1.1.2",
+    "webpack-merge": "^4.1.4"
   }
 }

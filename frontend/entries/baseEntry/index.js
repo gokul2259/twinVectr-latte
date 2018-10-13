@@ -5,6 +5,7 @@ const { Provider } = require("react-redux");
 const { combineReducers, createStore, applyMiddleware } = require("redux");
 const thunk = require("redux-thunk").default;
 const recentWorksReducer = require("modules/recentWorks/recentWorks-reducer.js");
+import { ThemeContext } from "entries/baseEntry/context.js";
 
 function isReactReduxsetup() {
   return window.store;
@@ -121,7 +122,14 @@ function renderReactElementToNode(
 
   ReactDOM.render(
     <Provider store={store}>
-      <WrappedComponent {...props} />
+         <ThemeContext.Consumer>
+           {
+                theme =>  {
+                  const contextProps = Object.assign({}, props, theme);
+                  return <WrappedComponent {...contextProps}  />
+                }
+            } 
+         </ThemeContext.Consumer>
     </Provider>,
     destinationNode
   );
