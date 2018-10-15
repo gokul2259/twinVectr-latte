@@ -3,10 +3,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-webpack');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     var webpackCommon = require('./webpack.config');
     var webpackConfig = require('./webpack.dev.config');
     var webpackConfigProd = require('./webpack.production.config');
-    
+
     grunt.initConfig({
         pkg: grunt
             .file
@@ -28,7 +29,7 @@ module.exports = function (grunt) {
             common: webpackCommon,
             prod: webpackConfigProd,
             dev: webpackConfig,
-          },
+        },
         cssmin: {
             target: {
                 files: [
@@ -42,10 +43,18 @@ module.exports = function (grunt) {
                 ]
             }
         },
+        clean: {
+            stylesheets: {
+                src: ['dist/styles']
+            },
+            scripts: {
+                src: ['dist/js-chunks']
+            },
+        },
         watch: {
             js: {
                 files: ['frontend/**/*.js'],
-                tasks: ['webpack:common'],
+                tasks: ['clean:scripts', 'webpack:common'],
                 options: {
                     spawn: false
                 }
@@ -60,8 +69,8 @@ module.exports = function (grunt) {
                 }
             }
         }
-		});
-		
+    });
+
     grunt.registerTask('build-prod', ['webpack:prod', 'sass', 'cssmin']);
     grunt.registerTask('build-dev', ['webpack:dev', 'sass', 'cssmin']);
 };

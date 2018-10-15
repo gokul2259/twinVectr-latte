@@ -18,7 +18,20 @@
 	<div class="preloader"><div class="status">&nbsp;</div></div>
 <?php endif; ?>
 
-	<div class="site-wrapper">
+	<nav class="mobile-primary-nav"> 
+			<div id="mobile-primary-nav"></div>
+			<?php
+			wp_nav_menu(array(
+				'theme_location' => 'primary',
+				'menu' => __( 'Primary Menu', 'latte' ),
+				'container_class' => 'primary-menu-mobile',
+				'fallback_cb' => 'latte_new_setup',
+				'items_wrap' => '<ul class="latte-push-menu-mobile">%3$s</ul>'
+			));
+			?>
+	</nav>
+
+	<div class="site-wrapper" id="site-wrapper">
 
 	<?php if( isset($latte_menu_display) && $latte_menu_display != 1 ): ?>
 
@@ -33,17 +46,6 @@
 			));
 			?>
 		</nav>
-		<nav class="mobile-primary-nav"> 
-			<div id="mobile-primary-nav"></div>
-			<?php
-			wp_nav_menu(array(
-				'theme_location' => 'primary',
-				'menu' => __( 'Primary Menu', 'latte' ),
-				'container_class' => 'primary-menu-mobile',
-				'fallback_cb' => 'latte_new_setup',
-				'items_wrap' => '<ul class="latte-push-menu-mobile">%3$s</ul>'
-			));
-			?>
-		</nav>
+		
 
 	<?php endif; ?>
