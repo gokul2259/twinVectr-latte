@@ -10,9 +10,9 @@
     @include respond-to(lg) {
         visibility: hidden;
     }
-    
+
     #mobile-primary-nav {
-        position: fixed;
+        position: absolute;
         top: 5%;
         left: 5%;
         z-index: 1001;
@@ -21,23 +21,22 @@
             visibility: hidden;
         }
     }
-
-    span {
-        background: $red !important;
-        height: 2px !important;
-    }
     
     .primary-menu-mobile {
-        position: fixed;
+        position: absolute;
         height: 100%;
         width: 300px;
         z-index:1000;
-        padding-top: 50px;
+        padding-top: 60px;
         visibility: hidden;
         background: $dark-gray;
         opacity: 0.9;
-        transition-timing-function: linear;
-        
+        transition: all .1s ease;
+        -webkit-transition: all .1s ease;
+        -moz-transition: all .1s ease;
+        -ms-transition: all .1s ease;
+        -o-transition: all .1s ease;
+        overflow: hidden;
 
         @include respond-to(lg) {
             display: none;
@@ -46,16 +45,18 @@
         .latte-push-menu-mobile {
             list-style-type: none;
             padding-left: 0;
+            text-align: center;
             li {
-                padding-top: 30px;
-                padding-bottom: 10px;
+                position: relative;
+                padding: 20px 0 20px 0;
+                padding-left: 35%;
                 font-size: 25px;
                 margin: 0;
                 line-height: 1em;
                 color: #949494;
                 border-style: solid;
                 border-width: 0 0 1px 0;
-                text-align: center;
+                text-align: left;
                 
                 a {
                     color: $black;
@@ -66,11 +67,11 @@
             }
         }
     }
-
 }
 
 .mobile-nav-mout {
-    transform: translate3d(80%,0,0);
+    transform: translate3d(300px,0,0);
 }
+
 
 

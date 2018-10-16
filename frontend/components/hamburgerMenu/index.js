@@ -15,18 +15,18 @@ class HamburgerMobileMenu extends Component {
         for (var i = 0; i < this.menuItem.length; i++) {
             this.menuItem[i].addEventListener('click', this.handleClick.bind(this));
         }
-
     }
 
     componentDidUpdate(prevProps, prevState) {
-
         if (!prevState.open) {
             this.hamburgerPanel.style.visibility = 'visible';
             this.siteWrapper.classList.toggle("mobile-nav-mout");
+            document.body.style.overflow = 'hidden';
 
         } else {
-            this.hamburgerPanel.style.visibility = 'hidden';
             this.siteWrapper.classList.toggle('mobile-nav-mout');
+            this.hamburgerPanel.style.visibility = 'hidden';
+            document.body.style.overflow = 'scroll';
         }
     }
 
@@ -43,7 +43,7 @@ class HamburgerMobileMenu extends Component {
                 menuClicked={this.handleClick.bind(this)}
                 width={35}
                 height={25}
-                strokeWidth={1}
+                strokeWidth={2}
                 rotate={0}
                 color='white'
                 borderRadius={1}
