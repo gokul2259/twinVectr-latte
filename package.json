@@ -26,6 +26,7 @@
     "css-loader": "^1.0.0",
     "file-loader": "^1.1.11",
     "grunt": "^1.0.3",
+    "grunt-contrib-clean": "^2.0.0",
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.1.0",

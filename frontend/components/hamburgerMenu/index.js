@@ -4,17 +4,29 @@ import HamburgerMenu from 'react-hamburger-menu';
 class HamburgerMobileMenu extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             open: false,
-         }
+        }
+
         this.hamburgerPanel = document.querySelector('.primary-menu-mobile');
+        this.siteWrapper = document.querySelector('.site-wrapper');
+        this.menuItem = document.querySelectorAll('.menu-item > a');
+
+        for (var i = 0; i < this.menuItem.length; i++) {
+            this.menuItem[i].addEventListener('click', this.handleClick.bind(this));
+        }
+
     }
 
     componentDidUpdate(prevProps, prevState) {
-        if(!prevState.open) {
-            this.hamburgerPanel.style.visibility = 'visible'; 
+
+        if (!prevState.open) {
+            this.hamburgerPanel.style.visibility = 'visible';
+            this.siteWrapper.classList.toggle("mobile-nav-mout");
+
         } else {
-            this.hamburgerPanel.style.visibility = 'hidden'; 
+            this.hamburgerPanel.style.visibility = 'hidden';
+            this.siteWrapper.classList.toggle('mobile-nav-mout');
         }
     }
 
@@ -23,9 +35,9 @@ class HamburgerMobileMenu extends Component {
             open: !this.state.open
         });
     }
-    
-    render() { 
-        return ( 
+
+    render() {
+        return (
             <HamburgerMenu
                 isOpen={this.state.open}
                 menuClicked={this.handleClick.bind(this)}
@@ -34,11 +46,11 @@ class HamburgerMobileMenu extends Component {
                 strokeWidth={1}
                 rotate={0}
                 color='white'
-                borderRadius={0}
+                borderRadius={1}
                 animationDuration={0.5}
             />
-         );
+        );
     }
 }
- 
+
 export default HamburgerMobileMenu;
