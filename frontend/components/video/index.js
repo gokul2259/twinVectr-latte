@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { constants } from 'utils/constants';
+import constants from 'utils/constants';
 
 class Video extends Component {
   constructor(props) {

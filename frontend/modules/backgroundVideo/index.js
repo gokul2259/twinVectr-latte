@@ -9,7 +9,7 @@ class BGVideo extends Component {
     }
 
     render() {
-        const { videoMp4, blogInfo, blogDesciption, scrollTarget, bgImage } = this.props;
+        const { videoMp4, blogInfo, blogDesciption, scrollTarget, bgImage, windowSize } = this.props;
         return (
                 <Video 
                     videoMp4 = {videoMp4}
@@ -17,6 +17,7 @@ class BGVideo extends Component {
                     taglinehead = {blogInfo}
                     taglineSubhead = {blogDesciption}
                     scrollTarget = {scrollTarget}
+                    windowSize = {windowSize}
                     height = '600'
                     width = '1200'
                     autoPlay
