@@ -13,6 +13,7 @@
   transform: translateY(-50%);
 
   .section-parallax--image {
+    top:0px;
     bottom: 60px;
 
     @include respond-to(md) {

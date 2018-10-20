@@ -10,7 +10,7 @@ class HamburgerMobileMenu extends Component {
 
         this.hamburgerPanel = document.querySelector('.primary-menu-mobile');
         this.siteWrapper = document.querySelector('.site-wrapper');
-        this.menuItem = document.querySelectorAll('.menu-item > a');
+        this.menuItem = document.querySelectorAll('.latte-mobile-menu > a');
 
         for (var i = 0; i < this.menuItem.length; i++) {
             this.menuItem[i].addEventListener('click', this.handleClick.bind(this));
