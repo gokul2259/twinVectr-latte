@@ -15,11 +15,9 @@ class SkillsSection extends Component {
   }
 
   handleScrollCalcualtion(event) {
-    const skillScrollTop = document.querySelectorAll(
-      '[js-react-module="skillsSection"]'
-    )[0].offsetTop;
-    const windowScrollTop = event.target.scrollingElement.scrollTop;
-    if (windowScrollTop >= skillScrollTop - 500 && !this.state.needToMount) {
+    const skillElement = document.querySelector('[js-react-module="skillsSection"]').getBoundingClientRect();
+
+    if (((skillElement.top + 20) <= document.documentElement.clientHeight) && !this.state.needToMount) {
       this.setState(prevState => {
         return {
           ...prevState,
@@ -102,7 +100,7 @@ class SkillsSection extends Component {
     const { needToMount } = this.state;
     return (
       <section className="skills-section" id="skills">
-       <div className="container">
+        <div className="container">
           <div className="row section--header">
             <p>{sectionTitle}</p>
           </div>
