@@ -17,7 +17,7 @@ const ServiceItem = (props) => {
         marginBottom: '20px',
     }
     return (
-        <div className='col-xs-12 col-sm-4 col-md-4 col-lg-4' style={cardExtraStyle}>
+        <div className='col-xs-12 col-sm-6 col-lg-4' style={cardExtraStyle}>
             <Card
                 image={featuredImage}
                 header={title.rendered}

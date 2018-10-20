@@ -3,6 +3,18 @@
   background: #ffffff;
   @extend .section--height;
 
+  .service-box {
+    display: -webkit-flex; 
+    display: flex;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    align-items: stretch;
+    -webkit-flex-flow:row wrap;
+    flex-flow: row wrap;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
   .card {
     width: 100%;
     img{
@@ -12,6 +24,7 @@
       @include respond-to(lg) {
         &:hover {
           transform: translate3d(-5px, -5px, -10px);
+          -webkit-transform: translate3d(-5px,-5px,10px);
           box-shadow: 10px 10px 10px $light-gray;
         }
       }

@@ -825,3 +825,12 @@ input.searchform-button:active {
     padding-bottom: 40px;
   }
 }
+
+/* grid override */
+
+  .col-lg-4 {
+    width: 33% !important;
+  }
+  
+
+

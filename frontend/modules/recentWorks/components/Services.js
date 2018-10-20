@@ -18,19 +18,13 @@ class Services extends Component {
 
     render() {
         const {title, subTitle} = this.props;
-        const flexStyle = {
-            display: 'flex',
-            flexFlow: 'row wrap',
-            alignItems: 'stretch',
-            justifyContent: 'center',
-        }
         return (
             <div>
                 <div className="container services-container">
                     <div className="row section--header">
                         <p>{title}</p> 
                     </div>
-                    <div className='row service-box' style={flexStyle}>
+                    <div className='row service-box'>
                         {this.renderRecentWorkList()}
                     </div>
                 </div>
