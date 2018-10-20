@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import constants from 'utils/constants';
 
 class ParllaxText extends Component {
   constructor(props) {
     super(props);
-    this.state ={
-      isSmoothParallaxEnabled: props.windowSize > 600,
+    this.state = {
+      isSmoothParallaxEnabled: props.windowSize > constants.WINDOWS_MEDIUM,
     }
   }
 
@@ -26,7 +27,7 @@ class ParllaxText extends Component {
           <h2 className="parllax-text-title">{aboutTitle}</h2>
         </div>
         <div
-           {...smoothParallax}
+          {...smoothParallax}
           start-movement="0.05"
           end-movement="1"
           start-position-x=".2"

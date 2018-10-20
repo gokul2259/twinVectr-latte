@@ -1,11 +1,10 @@
 import React, { Component } from "react";
+import constants from 'utils/constants';
 
 class Video extends Component {
   constructor(props) {
     super(props);
     this.handleScrollCalcualtion = this.handleScrollCalcualtion.bind(this);
-    this.screenWidth = window.innerWidth;
-
   }
 
   componentDidMount() {
@@ -50,9 +49,10 @@ class Video extends Component {
       loop,
       muted,
       bgImage,
+      windowSize
     } = this.props;
 
-    if (this.screenWidth > 600) {
+    if (windowSize > constants.WINDOWS_MEDIUM) {
       return (
         <video
           height={height}
@@ -107,7 +107,7 @@ Video.defaultProps = {
   taglinehead: '',
   taglineSubhead: '',
   scrollTarget: '',
-  bgImage:'',
+  bgImage: '',
 };
 
 module.exports = Video;
