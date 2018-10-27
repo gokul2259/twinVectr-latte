@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import HamburgerMenu from 'react-hamburger-menu';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 class HamburgerMobileMenu extends Component {
     constructor(props) {
@@ -17,17 +18,20 @@ class HamburgerMobileMenu extends Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (!prevState.open) {
+    componentDidUpdate() {
+        if (this.state.open) {
             this.hamburgerPanel.style.visibility = 'visible';
             this.siteWrapper.classList.toggle("mobile-nav-mout");
-            document.body.style.overflow = 'hidden';
-
+            disableBodyScroll(this.hamburgerPanel);
         } else {
+            enableBodyScroll(this.hamburgerPanel);
             this.siteWrapper.classList.toggle('mobile-nav-mout');
-            this.hamburgerPanel.style.visibility = 'hidden';
-            document.body.style.overflow = 'scroll';
+            this.hamburgerPanel.style.visibility = 'hidden';   
         }
+    }
+
+    componentWillUnmount() {
+        clearAllBodyScrollLocks();
     }
 
     handleClick() {
