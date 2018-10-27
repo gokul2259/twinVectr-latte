@@ -6,9 +6,9 @@
   
   .circular-bar-opacity {
     opacity: 0;
-    animation-name: progressBarFadein;
-    animation-fill-mode: forwards;
-    animation-timing-function: linear;
+    -webkit-animation-name: progressBarFadein;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-timing-function: linear;
 
     @supports (-webkit-overflow-scrolling: touch) {
       /* CSS specific to iOS devices */ 
@@ -16,7 +16,7 @@
     }
   }
 
-  @keyframes progressBarFadein {
+  @-webkit-keyframes progressBarFadein {
     0% {
       opacity: 0;
     }
