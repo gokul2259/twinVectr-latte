@@ -33,7 +33,7 @@ class SkillsSection extends Component {
       .slice(0, 4)
       .map((item, key) => {
         const fadeStyle = {
-          animationDuration: `${key / 10}s`,
+          animationDuration: `${(key + 1) / 10}s`,
           animationDelay: `${key / 5}s`
         };
 
@@ -66,7 +66,7 @@ class SkillsSection extends Component {
       .slice(4, skillsLength)
       .map((item, key) => {
         const fadeStyle = {
-          animationDuration: `${key / 10}s`,
+          animationDuration: `${(key + 1) / 10}s`,
           animationDelay: `${key / 5}s`
         };
 
