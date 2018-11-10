@@ -40,7 +40,7 @@
 	endif;
 
 	if( isset($latte_blogposts_display) && $latte_blogposts_display != 1 ):
-		get_template_part( 'sections/blogposts' );
+		//get_template_part( 'sections/blogposts' );
 	endif;
 
 	get_footer();

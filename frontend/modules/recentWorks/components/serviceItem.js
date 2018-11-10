@@ -1,6 +1,6 @@
 import React from 'react'
-import {Card, Icon} from 'semantic-ui-react'
-
+import {Icon} from 'semantic-ui-react/dist/commonjs/elements/Icon';
+import {Card} from 'semantic-ui-react/dist/commonjs/views/Card';
 const ServiceItem = (props) => {
     const {recentWork} = props;
     const {title, content} = recentWork;

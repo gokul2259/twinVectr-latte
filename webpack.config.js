@@ -6,10 +6,14 @@ var desktopEntries = entryPointfetcher(JS_ROOT, 'entries/desktop/**/*.js');
 
 module.exports = {
     entry: desktopEntries,
+    node: {
+      fs: 'empty'
+    },
     output: {
-        path: path.resolve(ROOT, 'dist/js-chunks'),
+        path: path.resolve(ROOT, 'dist/js-chunks/'),
         filename: '[name].bundle.js',
         chunkFilename: '[id].chunk.js',
+        publicPath: '/wp-content/themes/latte/dist/js-chunks/', 
     },
     resolve: {
       modules:[
@@ -17,6 +21,19 @@ module.exports = {
         'node_modules'
       ],
     },
+
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          commons: {
+            name: 'commons',
+            chunks: 'all',
+            minChunks: 2,
+          }
+        }
+      }
+    },
+
     module: {
       rules: [
         {
