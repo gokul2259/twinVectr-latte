@@ -24,7 +24,6 @@
 		get_template_part( 'sections/skills' );
 	endif;
 	
-
 	if( isset($latte_services_display) && $latte_services_display != 1 ):
 		get_template_part( 'sections/services' );
 	endif;
@@ -32,10 +31,8 @@
 	if( isset($latte_subscribe_display) && $latte_subscribe_display != 1 ):
 		get_template_part( 'sections/subscribe' );
 	endif;
-
-	
-        
-       if( isset($latte_social_display) && $latte_social_display != 1 ):
+    
+    if( isset($latte_social_display) && $latte_social_display != 1 ):
 		get_template_part( 'sections/social' );
 	endif;
 

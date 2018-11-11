@@ -22,6 +22,18 @@ module.exports = merge(webpackConfig, {
             path: path.resolve(ROOT, 'dist/js-chunks'),
             filename: '[name].[hash:8].bundle.js',
             chunkFilename: '[id].[hash:8].chunk.js',
+            publicPath: '/wp-content/themes/latte/dist/js-chunks/',
+        },
+        optimization: {
+            splitChunks: {
+              cacheGroups: {
+                commons: {
+                  name: 'commons',
+                  chunks: 'all',
+                  minChunks: 2,
+                }
+              }
+            }
         },
         plugins: [
             new webpack.DefinePlugin({
