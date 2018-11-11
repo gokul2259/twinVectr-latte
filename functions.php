@@ -137,6 +137,8 @@ function latte_scripts() {
 	$latte_animations_display = get_theme_mod('latte_animations_display');
 	$latte_menu_display = get_theme_mod('latte_menu_display');
 
+	
+
 	wp_enqueue_style( 'latte_bootstrap_css', get_template_directory_uri() . '/assets/styles/css/grid.min.css');
 	wp_enqueue_style( 'latte_semantic_css', get_template_directory_uri() . '/assets/styles/css/semantic.min.css');
 	wp_enqueue_style('baseStyle', get_template_directory_uri() . '/dist/styles/minified/base.min.css');
@@ -148,12 +150,21 @@ function latte_scripts() {
 	wp_enqueue_style( 'latte_open_sans', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800');
 	wp_enqueue_style( 'latte_sanchez', '//fonts.googleapis.com/css?family=Sanchez:400,400italic');
 
+
+	$bundle_files = glob(THEME_ROOT."/dist/js-chunks/entries/desktop/*.js");
+	foreach($bundle_files as $key=>$js_file) {
+		preg_match('/\/dist\/js-chunks\/entries\/desktop\/[\w.]+/', $js_file, $matches);
+		$handler = "reactApp-bundle".$key;
+		wp_enqueue_script( $handler, THEME_URL.$matches[0], '', '', true);
+	}
+
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	//wp_enqueue_script( 'latte_bootstrap_js', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.min.js', array( 'jquery' ),'',true);
 	//if( is_page_template( 'template-home.php' ) ) wp_enqueue_script( 'latte_parallax', get_template_directory_uri() . '/assets/js/parallax.min.js', array( 'jquery' ),'',true);
 	if( isset($latte_animations_display) && $latte_animations_display != 1 )wp_enqueue_script( 'latte_scrollreveal', get_template_directory_uri() . '/assets/js/scrollReveal.min.js', array( 'jquery' ),'',true);
 	if( isset($latte_menu_display) && $latte_menu_display != 1 )wp_enqueue_script( 'latte_classie', get_template_directory_uri() . '/assets/js/classie.js', array( 'jquery' ),'',true);
 	if( is_page_template( 'template-home.php' ) ) wp_enqueue_script( 'latte_matchHeight', get_template_directory_uri() . '/assets/js/jquery.matchHeight.js', array( 'jquery' ),'',true);
+	
 	wp_enqueue_script( 'latte_scripts_js', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ),'',true);
 
 	if( is_page_template( 'template-home.php' ) ) :
@@ -173,12 +184,7 @@ function latte_scripts() {
 		'latte_blogposts_display' => get_theme_mod('latte_blogposts_display')
 	));
 
-	$bundle_files = glob(THEME_ROOT."/dist/js-chunks/entries/desktop/*.js");
-	foreach($bundle_files as $key=>$js_file) {
-		preg_match('/\/dist\/js-chunks\/entries\/desktop\/[\w.]+/', $js_file, $matches);
-		$handler = "reactApp-bundle".$key;
-		wp_enqueue_script( $handler, THEME_URL.$matches[0], '', '', true);
-	}
+	
 }
 
 add_action( 'wp_enqueue_scripts', 'latte_scripts' );

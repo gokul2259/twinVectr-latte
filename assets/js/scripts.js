@@ -13,21 +13,22 @@ jQuery(window).load(function () {
 
 });
 
-jQuery(document).ready(function ($) {
+(function ($) {
 	if (latte_script_var.latte_is_homepage != 1) {
 		/* Smooth Scroll */
-		jQuery('a[href*=#]').click(function () {
-			if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-				var target = jQuery(this.hash);
-				target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
-				if (target.length) {
-					jQuery('html,body').animate({
-						scrollTop: target.offset().top
-					}, 1200);
-					return false;
+		setTimeout(function() {
+			jQuery('a[href*=#]').click(function () {
+				if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+					var target = jQuery(this.hash);
+					target = target.length ? target : jQuery('[name=' + this.hash.slice(1) + ']');
+					if (target.length) {
+						jQuery('html,body').animate({
+							scrollTop: target.offset().top
+						}, 1200);
+						return false;
+					}
 				}
-			}
-		});
+			})}, 1000);
 	}
 
 	if (latte_script_var.latte_is_homepage != 1) {
@@ -39,4 +40,4 @@ jQuery(document).ready(function ($) {
 		}
 	}
 
-});
+}(jQuery));
